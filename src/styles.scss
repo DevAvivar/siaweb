@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '../src/assets/dist/css/adminlte.min.css';
+@import '../src/assets/plugins/fontawesome-free/css/all.min.css';
+
+
+
+html, body { 
+
+    height: 100%;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-form-field{
+    width: 100%;
+}
+
+.line-buttons button,
+.line-buttons a {
+    margin: 8px 8px 20px 0px;
+}
+
+
+@media print
+{
+    form{
+        display: none;
+    }
+
+}
+

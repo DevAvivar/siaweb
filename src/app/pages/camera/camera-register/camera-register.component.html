@@ -1,0 +1,121 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <!-- content here -->
+    <div class="container-fluid">
+        <form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && salvar()" novalidate>
+            <div class="row">
+                <div class="col-10 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Data de Producao</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="productionDate"
+                                name="productionDate" class="form-control">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error>Campo é obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class=" col-2 col-sm-2 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <mat-checkbox formControlName="inactive">Inativo</mat-checkbox>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Turno</mat-label>
+                            <mat-select formControlName="shift">
+                                <mat-option *ngFor="let shift of shiftSelect" [value]="shift.value">
+                                    {{shift.viewNumber}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Local no Túnel*</mat-label>
+                            <mat-select formControlName="localTunnel">
+                                <mat-option *ngFor="let inOut of localTunnel" [value]="inOut.value">
+                                    {{inOut.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error>Defina como Entrada ou Saída do túnel </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-2 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input class="text-uppercase" matInput placeholder="Código" formControlName="code" readonly>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-10 col-lg-10">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input class="text-uppercase" matInput placeholder="Nome" formControlName="name" required
+                                [readonly]="camera_started">
+                            <mat-error>Campo é obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input class="text-uppercase" matInput placeholder="Protocolo de Internet" formControlName="ip"
+                                required [readonly]="camera_started">
+                            <mat-error>Campo é obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input class="text-uppercase" matInput placeholder="Porta" formControlName="port" readonly>
+                            <mat-error>Campo é obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" hidden="true">
+                <div class="col">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input  matInput  formControlName="started" readonly>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="line-buttons">
+                    <button mat-raised-button color="primary" [disabled]="!formGroup.valid || camera_started">Salvar</button>
+                    <!-- <button *ngIf="item && item.code" type="button" color="warn" mat-raised-button (click)="remove()"  [disabled]="item.started">Deletar</button> -->
+                    <button type="button" mat-raised-button routerLink="/camera">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<app-my-footer></app-my-footer>

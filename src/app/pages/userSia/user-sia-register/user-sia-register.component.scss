@@ -1,0 +1,9 @@
+
+.form-padrao {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-padrao > * {
+    width: 100%;
+}

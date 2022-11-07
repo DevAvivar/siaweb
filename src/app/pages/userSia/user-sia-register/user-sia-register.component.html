@@ -1,0 +1,83 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <!-- content here -->
+    <div class="container-fluid">
+        <form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && salvar()" novalidate>
+            <div class="row">
+
+                <div class="col-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput class="text-uppercase" placeholder="Código" formControlName="code" readonly>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Permissão</mat-label>
+                            <mat-select formControlName="roles">
+                                <mat-option *ngFor="let role of rolesSelect" [value]="role.viewNames">
+                                    {{role.viewShow}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8 col-md-8 col-lg-8">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input class="text-uppercase" matInput placeholder="Nome" formControlName="name" required>
+                            <mat-error>Campo é obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-4 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input class="text-uppercase" matInput placeholder="Login" formControlName="login" required>
+                            <mat-error>Campo é obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Senha" formControlName="password" required type="password">
+                            <!-- <mat-error *ngIf="((formGroup.controls['useSiaPassword'].touched) && (formGroup.controls['useSiaPassword'].errors.pattern))">Padrão de Senha inválido</mat-error> -->
+                            <mat-error>Campo é obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-6" >
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input  matInput placeholder="Logado" formControlName="logged" readonly>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="row">
+                <div class="line-buttons">
+                    <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>  
+                    <button type="button" mat-raised-button routerLink="/usuario">Cancelar</button> 
+                </div>
+            </div>
+          
+         
+        </form>
+    </div>
+</div>
+<app-my-footer></app-my-footer>

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: 'http://localhost:8081/api',
+  ws: 'ws://localhost:8081/websocket',
+  reports:'http://192.168.0.19:8080/siaaptrelatorio/api'
 };
 
 /*

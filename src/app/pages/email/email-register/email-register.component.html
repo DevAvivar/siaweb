@@ -1,0 +1,33 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <!-- content here -->
+    <div class="container-fluid">
+        <form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && salvar()" novalidate>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Código" formControlName="code" readonly class="text-uppercase">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col">
+                    <mat-form-field>
+                        <input class="text-uppercase" matInput placeholder="Email" formControlName="destinationEmail"
+                            required>
+                        <mat-error>Campo é obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="line-buttons">
+                    <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>
+                    <button type="button" mat-raised-button routerLink="/email">Cancelar</button>
+                </div>
+            </div>
+          
+        </form>
+    </div>
+</div>
+<app-my-footer></app-my-footer>

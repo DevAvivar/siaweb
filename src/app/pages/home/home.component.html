@@ -1,0 +1,21 @@
+
+<app-my-header></app-my-header>
+ <div class="content-wrapper">
+<app-my-toolbar [nameContent] = "nameContent"></app-my-toolbar>
+<div class="grid-container">
+    <!-- Colocando cols = 4 equivale a largura do viewport -->
+    <!-- Colocando rowHeight = 350px  é a altura maxima da linha contendo os componentes de camera-->
+    <mat-grid-list cols="4" rowHeight="350px">
+      <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+          <app-my-camera 
+          [camera]= card.camera
+          >  
+        </app-my-camera>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div> 
+ </div>
+<app-my-footer></app-my-footer>
+
+
+

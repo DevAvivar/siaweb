@@ -1,0 +1,225 @@
+
+   
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu"  role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block" routerLinkActive="active">
+            <a routerLink ="/assinatura/email" class="nav-link">Pagina inicial</a>
+          </li>
+          <!-- <li class="nav-item d-none d-sm-inline-block">
+            <a routerLink="/#" class="nav-link">Contact</a>
+          </li> -->
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+    
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a routerLink="/principal" class="brand-link">
+          <span class="brand-text font-weight-light offset-4">SIA</span>
+        </a>
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img src="../../../assets/dist/img/user-icon.png" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+              <a routerLink="/usuario/perfil" class="d-block">{{userLogged.name}}</a>
+            </div>
+          </div>
+    
+          <!-- SidebarSearch Form -->
+          <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+              <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                  <i class="fas fa-search fa-fw"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Sidebar Menu -->
+          <nav class="mt-2" >
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
+
+              <!-- Menu item Principal -->
+              <li class="nav-item" routerLinkActive="active">
+                <a routerLink="/assinatura/email" class="nav-link">
+                  <i class="fas fa-envelope"></i>
+                  <p>
+                    Assinatura de E-mail
+                  </p>
+                </a>
+              </li>
+
+ <!-- Menu item Auditoria -->
+ <!-- <li class="nav-item">
+  <a  class="nav-link">
+    <i class="fas fa-camera"></i>
+    <p>
+      Auditoria
+      <i class="right fas fa-angle-left"></i>
+    </p>
+  </a>
+  <ul class="nav nav-treeview">
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="/auditoria" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Listagem</p>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="/auditoria/cadastro" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Cadastro</p>
+      </a>
+    </li>
+ 
+  </ul>
+</li> -->
+
+
+
+             <!-- Menu item Cameras -->
+              <!-- <li class="nav-item">
+                <a  class="nav-link">
+                  <i class="fas fa-camera"></i>
+                  <p>
+                    Câmera
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item" routerLinkActive="active">
+                    <a routerLink="/camera" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Listagem</p>
+                    </a>
+                  </li>
+                  <li class="nav-item" routerLinkActive="active">
+                    <a routerLink="/camera/cadastro" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Cadastro</p>
+                    </a>
+                  </li>
+               
+                </ul>
+              </li> -->
+              <!-- Menu item Usuario -->
+              <li class="nav-item">
+                <a  class="nav-link">
+                  <i class="nav-icon fas fa-user"></i>
+                  <p>
+                    Usuário
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a routerLink="/usuario" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Listagem</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/usuario/cadastro" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Cadastro</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- menu item Emails -->
+              <!-- <li class="nav-item">
+                <a routerLink="/#" class="nav-link">
+                  <i class="fas fa-envelope"></i>
+                  <p>
+                    Email
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a routerLink="/email" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Listagem</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/email/cadastro" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Cadastro</p>
+                    </a>
+                  </li>
+                </ul>
+              </li> -->
+
+              <!-- menu item Barras -->
+              <!-- <li class="nav-item">
+                <a  class="nav-link">
+                  <i class="fas fa-chart-bar"></i>
+                  <p>
+                    Barras
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a routerLink="/barras" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Listagem</p>
+                    </a>
+                  </li>
+                </ul>
+              </li> -->
+
+                   <!-- menu item Relatorio -->
+                   <!-- <li class="nav-item">
+                    <a routerLink="/#" class="nav-link">
+                      <i class="fas fa-chart-line"></i>
+                      <p>
+                        Relatório
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a routerLink="/relatorio/listagem/grupo" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Barras por Câmera</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a routerLink="/relatorio/quantidade/camera" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Quantidade por Câmera</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li> -->
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+    
+      <!-- Control Sidebar -->
+      <!-- <aside class="control-sidebar control-sidebar-dark"> -->
+        <!-- Control sidebar content goes here -->
+      <!-- </aside> -->
+      <!-- /.control-sidebar -->
+    
+      
+
+    

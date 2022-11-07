@@ -1,0 +1,48 @@
+<div class="container-card">
+    <mat-card #card  class="my-card "  [ngClass]="{'colorGreen':listStatusInsert[0] == 'colorGreen' , 'colorYellow':listStatusInsert[0] == 'colorYellow' , 'colorRed':listStatusInsert[0] == 'colorRed'}"  >
+      <mat-card-title >{{camera.camName}} - TURNO: {{camera.camShift}} - DTA PROD: {{camera.camProductionDate == null ? "" : viewProductionDate(camera.camProductionDate)}}  <!--<span>ULTIMAS LEITURAS</span>--> <!-- Aqui vai o ip da camera que etá lendo os codigos--></mat-card-title>
+      <mat-card-subtitle>{{camera.camIp}}</mat-card-subtitle>
+      <mat-card-content>
+        <div  class="card-content">
+             <!-- <div *ngIf="camera.camStarted" class="container-img">
+                  <img src= {{wsImg}}  width="410" height="230">
+                  <div style="fill: lime; fill-opacity: 0; stroke-width: 2; stroke: green;" ></div>
+                </div> -->
+          <div class="one-last-content">
+            <ul *ngIf="camera.camStarted" class="viewBarras">
+              <li >           
+                <p>{{responseWebSocket[0][2]}}</p>
+                <p>{{dataTimeFormatPtbr(responseWebSocket[0][3],0)}}</p>
+            </li>
+            </ul>
+            <mat-card-actions class="action-buttons">
+              <div *ngIf="permissionActionButtons">
+                <button mat-raised-button color="primary" (click)="startRead()" [disabled]="camera.camStarted ? true : false">Iniciar</button>
+              <button mat-raised-button color="warn" (click)="stopRead()" [disabled]="camera.camStarted ? false : true">Parar</button>
+              </div>
+            </mat-card-actions>
+          </div>
+
+          <div class="ten-last-content">
+            <ul *ngIf="camera.camStarted" class="viewBarras">
+              <li *ngFor="let response of listResponseWebSocket" class="ten-last">
+                <p>{{response[2]}} - {{dataTimeFormatPtbr(response[3],0)}}</p>
+                
+            </li>
+            </ul>
+          </div>
+    
+        </div>
+        <p><!--Conteudo com os codigos de barras lidos pela camera definida acima --></p>
+        <div *ngIf="loading" class="spinner">
+          <mat-spinner></mat-spinner>
+        </div>
+
+        <!-- <div class="container-img">
+          <img src= {{wsImg}}  width="150" height="150">
+        </div> -->
+    
+      </mat-card-content>
+    </mat-card>
+
+    </div>
