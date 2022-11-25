@@ -3,6 +3,5 @@
  */
  export interface EmailSignature{
     name: string,
-    cargo: string,
-    setor: string    
+    occupation: string    
     }

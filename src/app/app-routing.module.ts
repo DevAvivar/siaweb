@@ -110,7 +110,8 @@ const routes: Routes = [
   //  },
 
    { path: 'assinatura/email', 
-   loadChildren: () => import("./pages/emailSignature/email-signature.module").then( (m) => m.EmailSignatureModule) 
+   loadChildren: () => import("./pages/emailSignature/email-signature.module").then( (m) => m.EmailSignatureModule),
+   canActivate: [AuthGuardService]
  },
 
 ];

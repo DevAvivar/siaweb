@@ -4,37 +4,47 @@
     <app-my-toolbar [nameContent] = "nameContent"></app-my-toolbar>
     <form>
         <div class="form-row">
-          <div class="form-group col-md-5">
+            <div class="form-group col-md-1">
+                <label for="inputEmail4">Matricula</label>
+                <input #registration type="text" class="form-control" id="inputEmail4"  (keyup)="getRegistration()">
+              </div>
+          <div class="form-group col-md-4">
             <label for="inputEmail4">Nome</label>
-            <input #name type="text" class="form-control" id="inputEmail4" placeholder="Nome" (keyup)="getName()">
+            <input #name type="text" class="form-control" id="inputEmail4"  (keyup)="getName()">
           </div>
           <div class="form-group col-md-4">
             <label for="inputPassword4">Cargo</label>
-            <input #function type="text" class="form-control" id="inputPassword4" placeholder="Cargo" (keyup)="getFunction()">
+            <input #function type="text" class="form-control" id="inputPassword4"  (keyup)="getFunction()">
           </div>
 
           <div class="form-group col-md-3">
             <label for="inputAddress">Celular</label>
-            <input #celPhone type="text" class="form-control"  id="inputAddress" placeholder="Celular" (keyup)="getCelPhone()">
+            <input #celPhone type="text" class="form-control"  id="inputAddress" (keyup)="getCelPhone()">
           </div>  
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="inputAddress">Telefone</label>
-                <input #phone type="text" class="form-control" id="inputAddress" placeholder="Telefone" (keyup)="getPhone()">
+                <input #phone type="text" class="form-control" id="inputAddress"  (keyup)="getPhone()">
               </div>       
 
               <div class="form-group col-md-9">
                 <label for="inputAddress">E-mail</label>
-                <input #email type="email" class="form-control" id="inputAddress" placeholder="E-mail" (keyup)="getEmail()">
+                <input #email type="email" class="form-control" id="inputAddress"  (keyup)="getEmail()">
               </div>   
             
         </div>
         <div class="form-row">
-            <div class="form-group offset-5 col-md-1">
+            <div class="form-group offset-4 col-md-1">
                 <br>
                 <label ></label>
               <button #generate type="button" class="form-control btn btn-primary" (click)="generateSignature()">Gerar</button>
+            </div>  
+
+            <div class="form-group  col-md-1">
+                <br>
+                <label ></label>
+              <button #generate type="button" class="form-control btn btn-secondary" (click)="cleanFields()">Limpar</button>
             </div>  
         </div>
         

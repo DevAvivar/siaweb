@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgxCaptureService } from 'ngx-capture';
 // import * as puppeteer from 'puppeteer';
 import { ExportAsService, ExportAsConfig } from 'ngx-export-as';
@@ -16,6 +17,7 @@ export class EmailSignatureComponent implements OnInit {
 
   // @Output() getValues = new EventEmitter();// recebe uma função para capturar o valor do input
   // @Output() generate = new EventEmitter();//recebe o evento de click do botão 
+  registrationField!: number;
   nameField!: string;
   functionField!: string;
   phoneField!: string;
@@ -32,9 +34,13 @@ export class EmailSignatureComponent implements OnInit {
   constructor(
     private exportAsService: ExportAsService,
     private ngCaptureService: NgxCaptureService,
-    private emailSignatureService: EmailSignatureService) { }
+    private emailSignatureService: EmailSignatureService,
+    public matSnackBar: MatSnackBar) { }
 
   //captura o elemento no DOM
+  @ViewChild('registration', { static: true })
+  registration!: ElementRef;
+
   @ViewChild('name', { static: true })
   name!: ElementRef;
 
@@ -60,6 +66,38 @@ export class EmailSignatureComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  /**
+ * Captura o valor que está no input de nome
+ */
+   getRegistration() 
+   {
+    let term = 0;
+    if(this.registration.nativeElement.value > 0)
+      term = this.registration.nativeElement.value;
+    
+    this.emailSignatureService.findDataSignature(term).subscribe({
+      next:(collaborator)=>
+      {
+        console.log("Meu nome:  "+collaborator.name);
+          this.nameField = collaborator.name;
+          this.name.nativeElement.value = collaborator.name;
+          this.functionField = collaborator.occupation;
+          this.function.nativeElement.value = collaborator.occupation;
+     
+          
+      },
+      error:(e)=>
+      {
+        this.matSnackBar.open("Não foi possível fazer a consulta. Contate a Ti. ", '', {
+          duration: 5000,
+          panelClass: "black-snackbar",
+        });
+      },
+      complete:()=>{console.info('complete')}
+    });
+
+  }
 
   /**
  * Captura o valor que está no input de nome
@@ -95,6 +133,21 @@ export class EmailSignatureComponent implements OnInit {
  */
   getEmail() {
     this.emailField = this.email.nativeElement.value;
+  }
+
+  cleanFields()
+  {
+    this.registration.nativeElement.value = '';
+    this.name.nativeElement.value = '';
+    this.nameField = '';
+    this.function.nativeElement.value = '';
+    this.functionField = '';
+    this.celPhone.nativeElement.value = '';
+    this.celPhoneField = '';
+    this.phone.nativeElement.value = '';
+    this.phoneField = '';
+    this.email.nativeElement.value = '';
+    this.emailField = '';
   }
 
   //  async capture(){
