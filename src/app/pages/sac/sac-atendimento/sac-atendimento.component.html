@@ -1,0 +1,1091 @@
+<app-my-header></app-my-header>
+
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+      <form>
+      <mat-tab-group>
+        <!-- Inicio da aba Atendimento -->
+        <mat-tab label="Atendimento">
+
+          <div class="row">
+            <fieldset class="border p-2 col-6">
+                <legend class="w-auto">Status</legend>
+                <div class="row">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Pendente  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="2">Em Andamento  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="3">Finalizado</mat-radio-button>
+                  </mat-radio-group>
+
+                </div>
+
+            </fieldset>
+
+            <fieldset class="border p-2 col-6">
+
+                <div class="row">
+                  <legend class="w-auto">Classificação</legend>
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Qualidade e Outros &nbsp;&nbsp; </mat-radio-button>
+                    <mat-radio-button value="2">Devoluções e Refaturamento &nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button value="3">Ocorrência &nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button value="4">Terceiros &nbsp;</mat-radio-button>
+                    <mat-radio-button value="5">FFO &nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button value="6">Informativo &nbsp;</mat-radio-button>
+                    <mat-radio-button value="7">Exportação &nbsp; </mat-radio-button>
+                  </mat-radio-group>
+
+                </div>
+
+            </fieldset>
+
+        </div><br>
+
+        <div class="row">
+
+            <div class="col-6 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Código</mat-label>
+                        <input #codeAtt matInput class="text-uppercase" >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Protocolo</mat-label>
+                      <input #protocol class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+<div class="row">
+<div class="col-2 col-md-2 col-lg-2">
+<div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Responsavel pela abertura do Atendimento</mat-label>
+        <input #nameUser class="text-uppercase" matInput>
+    </mat-form-field>
+</div>
+</div>
+<div class="col-3 col-md-4 col-lg-4">
+<div class="form-group">
+    <mat-form-field appearance="fill">
+
+        <input #user class="text-uppercase" matInput >
+    </mat-form-field>
+</div>
+</div>
+
+</div>
+        <div class="row">
+
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Data Inicial</mat-label>
+                    <input #dateinitial matInput [matDatepicker]="pickerSecond">
+                    <mat-datepicker-toggle matSuffix [for]="pickerSecond"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerSecond></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-6 col-md-2 col-lg-2">
+          <div class="form-group">
+             <mat-form-field appearance="fill">
+                 <mat-label>Hora Inicial</mat-label>
+                 <input matInput type="time" formControlName="timeInitial" name="timeInitial" #timeInitial>
+
+             </mat-form-field>
+          </div>
+      </div>
+
+        <div class="col-3 col-md-2 col-lg-2">
+          <div class="form-group">
+              <mat-form-field appearance="fill">
+                  <mat-label>Data Final</mat-label>
+                  <input #dateinitial matInput [matDatepicker]="pickerQuart">
+                  <mat-datepicker-toggle matSuffix [for]="pickerQuart"></mat-datepicker-toggle>
+                  <mat-datepicker #pickerQuart></mat-datepicker>
+              </mat-form-field>
+          </div>
+      </div>
+      <div class="col-6 col-md-2 col-lg-2">
+        <div class="form-group">
+           <mat-form-field appearance="fill">
+               <mat-label>Hora Final</mat-label>
+               <input matInput type="time" formControlName2="timeSecond" name="timeSecond" #timeSecond>
+             </mat-form-field>
+        </div>
+    </div>
+        </div>
+
+        <fieldset class="border p-2 col-6">
+          <legend class="w-auto">Tipo de Contato</legend>
+          <div class="row">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1"> Interno  &nbsp;</mat-radio-button>
+              <mat-radio-button value="2">Externo  </mat-radio-button>
+
+            </mat-radio-group>
+          </div>
+
+      </fieldset>
+
+        <div class="row">
+            <div class="col-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Responsavel pelo Contato</mat-label>
+                        <input #erpClient class="text-uppercase" matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-3 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Responsável pelo Cliente</mat-label>
+                        <input #codeClient class="text-uppercase" matInput >
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <div class="col-3 col-md-5 col-lg-5">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Outro Telefone do Cliente</mat-label>
+                        <input #protocol class="text-uppercase" matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Responsável pelo Atendimento</mat-label>
+                        <input #user class="text-uppercase" matInput >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+
+                      <input #nameProduct class="text-uppercase" matInput>
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Canal de Atendimento</mat-label>
+                        <input #complaint class="text-uppercase" matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-3 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+
+                        <input #nameComplaint class="text-uppercase" matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Setor Responsável</mat-label>
+                        <input #sector class="text-uppercase" matInput >
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-3 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+
+                        <input #nameSector class="text-uppercase" matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>NF-e Devolução</mat-label>
+                      <input #devolution matInput class="text-uppercase" >
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="col-6 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Série</mat-label>
+                      <input #serie matInput class="text-uppercase">
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="col-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label> Cel.Envio de Protocolo</mat-label>
+                    <input #protocol class="text-uppercase" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+              <div class="col-3 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Nome Envio Protocolo</mat-label>
+                          <input #product class="text-uppercase" matInput >
+                      </mat-form-field>
+                  </div>
+              </div>
+        </div>
+        <div class="row">
+
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Data Inicial</mat-label>
+                    <input #dateinitial matInput [matDatepicker]="pickerPrimary">
+                    <mat-datepicker-toggle matSuffix [for]="pickerPrimary"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerPrimary></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-6 col-md-2 col-lg-2">
+          <div class="form-group">
+             <mat-form-field appearance="fill">
+                 <mat-label>Hora Inicial do Contato</mat-label>
+                 <input matInput type="time" formControlName4="timeTQuart" name="timeQuart" #timeQuart>
+
+             </mat-form-field>
+          </div>
+      </div>
+
+        <div class="col-3 col-md-2 col-lg-2">
+          <div class="form-group">
+              <mat-form-field appearance="fill">
+                  <mat-label>Data Final</mat-label>
+                  <input #dateinitial matInput [matDatepicker]="pickerTer">
+                  <mat-datepicker-toggle matSuffix [for]="pickerTer"></mat-datepicker-toggle>
+                  <mat-datepicker #pickerTer></mat-datepicker>
+              </mat-form-field>
+          </div>
+      </div>
+      <div class="col-6 col-md-2 col-lg-2">
+        <div class="form-group">
+           <mat-form-field appearance="fill">
+               <mat-label>Hora Final do Contato</mat-label>
+               <input matInput type="time" formControlName3="timeTerc" name="timeTerc" #timeTerc>
+
+           </mat-form-field>
+        </div>
+    </div>
+        </div>
+
+
+
+        </mat-tab>
+        <!-- Fim da aba atendimento / Inicio aba Cliente -->
+        <mat-tab label="Cliente">
+          <div class="row">
+            <div class="row">
+
+              <div class="col-6 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Código</mat-label>
+                          <input #code matInput class="text-uppercase" >
+                      </mat-form-field>
+                  </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Protocolo</mat-label>
+                        <input #protocol class="text-uppercase" matInput >
+                    </mat-form-field>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <fieldset class="border p-2 col-6">
+                <legend class="w-auto">Status</legend>
+                <div class="row">
+                  <div class="row">
+                    <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button value="1">Pendente  &nbsp;</mat-radio-button>
+                      <mat-radio-button value="2">Em Andamento  &nbsp;</mat-radio-button>
+                      <mat-radio-button value="3">Finalizado</mat-radio-button>
+                    </mat-radio-group>
+
+                  </div>
+                </div>
+
+            </fieldset>
+            </div>
+            <div class="col-3 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>ERP</mat-label>
+                      <input #complaint class="text-uppercase" matInput (dblclick)="openModalClient()">
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Cliente</mat-label>
+                    <input #complaint class="text-uppercase" matInput (dblclick)="openModalClient()">
+                </mat-form-field>
+            </div>
+        </div>
+          <div class="col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalClient()">
+                  </mat-form-field>
+              </div>
+          </div>
+            <div class="col-3 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                      <mat-label>Data Criação</mat-label>
+                      <input #dateinitial matInput [matDatepicker]="pickerCinc">
+                      <mat-datepicker-toggle matSuffix [for]="pickerCinc"></mat-datepicker-toggle>
+                      <mat-datepicker #pickerCinc></mat-datepicker>
+                  </mat-form-field>
+              </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-2 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Representante</mat-label>
+                      <input #nameComplaint class="text-uppercase" matInput>
+                  </mat-form-field>
+              </div>
+          </div>
+            <div class="col-4 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+               <input #complaint class="text-uppercase" matInput  >
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="col-2 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Freq.Compra Mes</mat-label>
+                    <input #reclam matInput class="text-uppercase" >
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Mídia de Compra</mat-label>
+                    <input #frequencia matInput class="text-uppercase" >
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-2 col-md-2 col-lg-2">
+          <div class="form-group">
+              <mat-form-field appearance="fill">
+                    <mat-label>Quantidade de Reclamações</mat-label>
+                  <input #midiacomp class="text-uppercase" matInput >
+              </mat-form-field>
+          </div>
+      </div>
+      <div class="col-2 col-md-2 col-lg-2">
+        <div class="form-group">
+            <mat-form-field appearance="fill">
+                    <mat-label>Supervisor do Representante</mat-label>
+                <input #nameComplaint class="text-uppercase" matInput>
+            </mat-form-field>
+        </div>
+    </div>
+
+      <div class="col-3 col-md-4 col-lg-4">
+        <div class="form-group">
+            <mat-form-field appearance="fill">
+
+                <input #complaint class="text-uppercase" matInput  >
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="col-2 col-md-2 col-lg-2">
+      <div class="form-group">
+          <mat-form-field appearance="fill">
+                  <mat-label>Gerente do Sup.do Repesentante</mat-label>
+              <input #nameSector class="text-uppercase" matInput>
+          </mat-form-field>
+      </div>
+  </div>
+
+    <div class="col-3 col-md-4 col-lg-4">
+        <div class="form-group">
+            <mat-form-field appearance="fill">
+                <input #sector class="text-uppercase" matInput >
+            </mat-form-field>
+        </div>
+    </div>
+
+
+
+       <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Telefone</mat-label>
+                    <input #complaint class="text-uppercase" matInput >
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-3 col-md-2 col-lg-2">
+          <div class="form-group">
+              <mat-form-field appearance="fill">
+                    <mat-label>E-mail</mat-label>
+                  <input #complaint class="text-uppercase" matInput  >
+              </mat-form-field>
+          </div>
+      </div>
+
+
+              <div class="col-3 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                    <mat-label>CROSS/CD</mat-label>
+                          <input #crosscd class="text-uppercase" matInput placeholder="cross/cd" >
+                      </mat-form-field>
+                  </div>
+              </div>
+              <div class="col-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+
+                        <input #nameSector class="text-uppercase" matInput >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>CNPJ</mat-label>
+                      <input #complaint class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+        <!-- CAIXA DO ENDEREÇO -->
+
+        <div class="row">
+          <fieldset class="border p-2 col-12">
+              <legend class="w-auto">Endereço</legend>
+              <div class="row">
+
+                <div class="col-3 col-md-4 col-lg-4">
+               <div class="form-group">
+                    <mat-form-field appearance="fill">
+                    <mat-label>Logradouro</mat-label>
+                        <input #sector class="text-uppercase" matInput >
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+               <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                    <mat-label>Número</mat-label>
+                            <input #complaint class="text-uppercase" matInput >
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                    <mat-label>Complemento</mat-label>
+                          <input #complaint class="text-uppercase" matInput >
+                      </mat-form-field>
+                  </div>
+              </div>
+
+            </div>
+              <div class="row">
+                <div class="col-3 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                    <mat-label>Bairro</mat-label>
+                          <input #sector class="text-uppercase" matInput >
+                      </mat-form-field>
+                  </div>
+              </div>
+              <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                    <mat-label>Cidade</mat-label>
+                        <input #sector class="text-uppercase" matInput >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>CEP</mat-label>
+                      <input #sector class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+            <div class="col-3 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Estado</mat-label>
+                      <input #sector class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>País</mat-label>
+                    <input #sector class="text-uppercase" matInput >
+                </mat-form-field>
+            </div>
+        </div>
+              </div>
+
+          </fieldset>
+          </div>
+        </mat-tab>
+        <!-- Fim da aba Cliente -->
+        <!-- Inicio da Aba produto -->
+        <mat-tab label="Produto">
+          <div class="row">
+
+            <div class="col-6 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                    <mat-label>Código</mat-label>
+                        <input #code matInput class="text-uppercase" >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Protocolo</mat-label>
+                      <input #protocol class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <fieldset class="border p-2 col-6">
+              <legend class="w-auto">Status</legend>
+              <div class="row">
+                <div class="row">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Pendente  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="2">Em Andamento  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="3">Finalizado</mat-radio-button>
+                  </mat-radio-group>
+
+                </div>
+              </div>
+
+          </fieldset>
+
+          <app-my-table
+          [displayedColumns]="displayedColumnsPr"
+          [dataSource]="dataSourcePr"
+          [displayHeaderColumns]="displayHeaderColumnsPr"
+          [totalElements] = "totalElementsPr"
+          [loading]="loadingPr"
+          (getSort)=getMatSortPr($event)
+          (getPaginator) = getMatPaginatorPr($event)
+          (searchAll)="getSearchAllPr($event)"
+          (routerEdit)="getRouterEditPr($event)"
+          (routerDelete)="getRouterDeletePr($event)"
+          (routerCreate)="getRouterCreatePr($event)"
+          >
+          </app-my-table>
+<!-- botoes de  interação -->
+<div class="row ">
+  <div class="col-1 col-md-4 col-lg-4  ">
+      <button mat-raised-button color="primary">Adicionar</button>
+
+      <button mat-raised-button color="primary">Alterar</button>
+
+      <button mat-raised-button color="primary">Remover</button>
+
+      <button mat-raised-button color="primary"(click)="testemodal()">Visualizar</button>
+  </div>
+</div><br>
+      </div><br>
+
+        </mat-tab>
+        <!-- Fim da aba produto -->
+
+        <!-- Inicio da Aba Midia  -->
+        <mat-tab label="Mídia">
+          <div class="row">
+
+            <div class="col-6 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                    <mat-label>Código</mat-label>
+                        <input #code matInput class="text-uppercase">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Protocolo</mat-label>
+                      <input #protocol class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <fieldset class="border p-2 col-6">
+              <legend class="w-auto">Status</legend>
+              <div class="row">
+                <div class="row">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Pendente  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="2">Em Andamento  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="3">Finalizado</mat-radio-button>
+                  </mat-radio-group>
+
+                </div>
+              </div>
+
+          </fieldset>
+          </div>
+
+          <app-my-table
+          [displayedColumns]="displayedColumnsMd"
+          [dataSource]="dataSourceMd"
+          [displayHeaderColumns]="displayHeaderColumnsMd"
+          [totalElements] = "totalElementsMd"
+          [loading]="loadingMd"
+          (getSort)=getMatSortMd($event)
+          (getPaginator) = getMatPaginatorMd($event)
+          (searchAll)="getSearchAllMd($event)"
+          (routerEdit)="getRouterEditMd($event)"
+          (routerDelete)="getRouterDeleteMd($event)"
+          (routerCreate)="getRouterCreateMd($event)"
+          >
+          </app-my-table>
+
+          <div class="row">
+
+              <div class="col-2 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                            <mat-label>Código</mat-label>
+                        <input #nameComplaint class="text-uppercase" matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+
+              <div class="col-3 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                            <mat-label>Canal de envio de Mídia</mat-label>
+                        <input #complaint class="text-uppercase" matInput  >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                      <mat-label>Data Final</mat-label>
+                      <input #dateinitial matInput [matDatepicker]="pickerSeis">
+                      <mat-datepicker-toggle matSuffix [for]="pickerSeis"></mat-datepicker-toggle>
+                      <mat-datepicker #pickerSeis></mat-datepicker>
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="col-6 col-md-2 col-lg-2">
+            <div class="form-group">
+               <mat-form-field appearance="fill">
+                   <mat-label>Hora Final do Contato</mat-label>
+                   <input matInput type="time" formControlName4="timeTerc" name="timeTerc" #timeQuar>
+
+               </mat-form-field>
+            </div>
+        </div>
+
+        </div>
+          <!-- botoes de  interação -->
+<div class="row ">
+  <div class="col-3 col-md-4 col-lg-4  ">
+      <button mat-raised-button color="primary">Adicionar</button>
+      <button mat-raised-button color="primary">Remover</button>
+      <button mat-raised-button color="primary">Visualizar</button>
+      <button mat-raised-button color="primary">Baixar</button>
+
+  </div>
+</div><br>
+        </mat-tab>
+        <!-- Fim da Aba Midia  -->
+
+
+         <!-- Inicio da Aba transportes  -->
+         <mat-tab label="Transportes">
+          <div class="row">
+
+            <div class="col-6 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                    <mat-label>Código</mat-label>
+                        <input #code matInput class="text-uppercase" >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Protocolo</mat-label>
+                      <input #protocol class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <fieldset class="border p-2 col-6">
+              <legend class="w-auto">Status</legend>
+              <div class="row">
+                <div class="row">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Pendente  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="2">Em Andamento  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="3">Finalizado</mat-radio-button>
+                  </mat-radio-group>
+
+                </div>
+              </div>
+
+          </fieldset>
+          </div>
+          <div class="row">
+
+            <div class="col-6 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                    <mat-label>Transportadora</mat-label>
+                        <input #code matInput class="text-uppercase" >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+
+                      <input #protocol class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-6 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                  <mat-label>Motorista</mat-label>
+                      <input #code matInput class="text-uppercase" >
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="col-3 col-md-3 col-lg-3">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+
+                    <input #protocol class="text-uppercase" matInput >
+                </mat-form-field>
+            </div>
+        </div>
+      </div>
+          <div class="row">
+            <fieldset class="border p-2 col-6">
+                <legend class="w-auto">Placa Veicular </legend>
+                <div class="row">
+                  <div class="row">
+                    <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button value="1">Placa Brasil  &nbsp;</mat-radio-button>
+                      <mat-radio-button value="2">Placa Mercosul  &nbsp;</mat-radio-button>
+
+                    </mat-radio-group>
+
+                  </div>
+                </div>
+          </fieldset>
+
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Placa 1</mat-label>
+                    <input #sector class="text-uppercase" matInput >
+                </mat-form-field>
+            </div>
+        </div>
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Placa 2</mat-label>
+                    <input #sector class="text-uppercase" matInput >
+                </mat-form-field>
+            </div>
+        </div>
+            </div>
+
+          <!-- botoes de  interação -->
+<div class="row ">
+  <div class="col-3 col-md-4 col-lg-4  ">
+      <button mat-raised-button color="primary">Salvar</button>
+      <button mat-raised-button color="primary">Enviar</button>
+      <button mat-raised-button color="primary">Finalizar</button>
+      <button mat-raised-button color="primary">Imprimir</button>
+      <button mat-raised-button color="primary">Voltar</button>
+  </div>
+</div><br>
+         </mat-tab>
+         <!-- Fim da Aba transportes  -->
+
+
+          <!-- Inicio da Aba Valores  -->
+        <mat-tab label="Valores">
+          <div class="row">
+
+            <div class="col-6 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                    <mat-label>Código</mat-label>
+                        <input #code matInput class="text-uppercase" >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Protocolo</mat-label>
+                      <input #protocol class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <fieldset class="border p-2 col-6">
+              <legend class="w-auto">Status</legend>
+              <div class="row">
+                <div class="row">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Pendente   &nbsp;</mat-radio-button>
+                    <mat-radio-button value="2">Em Andamento  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="3">Finalizado </mat-radio-button>
+                  </mat-radio-group>
+
+                </div>
+              </div>
+          </fieldset>
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Receitas</mat-label>
+                    <input #sector class="text-uppercase" matInput >
+                </mat-form-field>
+            </div>
+        </div>
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Despesas</mat-label>
+                    <input #sector class="text-uppercase" matInput >
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-3 col-md-2 col-lg-2">
+          <div class="form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Total</mat-label>
+                  <input #sector class="text-uppercase" matInput >
+              </mat-form-field>
+          </div>
+      </div>
+</div>
+<app-my-table
+          [displayedColumns]="displayedColumnsVr"
+          [dataSource]="dataSourceVr"
+          [displayHeaderColumns]="displayHeaderColumnsVr"
+          [totalElements] = "totalElementsVr"
+          [loading]="loadingVr"
+          (getSort)=getMatSortVr($event)
+          (getPaginator) = getMatPaginatorVr($event)
+          (searchAll)="getSearchAllVr($event)"
+          (routerEdit)="getRouterEditVr($event)"
+          (routerDelete)="getRouterDeleteVr($event)"
+          (routerCreate)="getRouterCreateVr($event)"
+          >
+          </app-my-table>
+          <!-- botoes de  interação -->
+<div class="row ">
+  <div class="col-3 col-md-4 col-lg-4  ">
+      <button mat-raised-button color="primary">Adicionar</button>
+      <button mat-raised-button color="primary">Alterar</button>
+      <button mat-raised-button color="primary">Remover</button>
+       <button mat-raised-button color="primary">Visualizar</button>
+  </div>
+</div><br>
+        </mat-tab>
+        <!-- Fim da Aba Valores   -->
+
+         <!-- Inicio da Aba Observação  -->
+         <mat-tab label="Observação">
+          <div class="row">
+
+            <div class="col-6 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                    <mat-label>Código</mat-label>
+                        <input #code matInput class="text-uppercase" >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Protocolo</mat-label>
+                      <input #protocol class="text-uppercase" matInput>
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <fieldset class="border p-2 col-6">
+              <legend class="w-auto">Status</legend>
+              <div class="row">
+                <div class="row">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Pendente  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="2">Em Andamento  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="3">Finalizado</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+               </div>
+
+          </fieldset>
+  <div class="row">
+    <fieldset class="border p-2 col-12">
+
+    <div class="form-group">
+     <label for="story">&nbsp; Observação &nbsp;</label><br>
+      <textarea id="story" name="story" rows="20" cols="200"> </textarea>
+    </div>
+  </fieldset>
+  </div>
+<!-- botoes de  interação -->
+
+      </div><br></mat-tab>
+         <!-- Fim da Aba Observação  -->
+
+          <!-- Inicio da Aba Andamento  -->
+        <mat-tab label="Andamento">
+          <div class="row">
+
+            <div class="col-6 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                    <mat-label>Código</mat-label>
+                        <input #code matInput class="text-uppercase" >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Protocolo</mat-label>
+                      <input #protocol class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <fieldset class="border p-2 col-6">
+              <legend class="w-auto">Status</legend>
+              <div class="row">
+                <div class="row">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Pendente  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="2">Em Andamento  &nbsp;</mat-radio-button>
+                    <mat-radio-button value="3">Finalizado</mat-radio-button>
+                  </mat-radio-group>
+
+                </div>
+              </div>
+
+          </fieldset>
+          <app-my-table
+          [displayedColumns]="displayedColumnsAn"
+          [dataSource]="dataSourceAn"
+          [displayHeaderColumns]="displayHeaderColumnsAn"
+          [totalElements] = "totalElementsAn"
+          [loading]="loadingAn"
+          (getSort)=getMatSortAn($event)
+          (getPaginator) = getMatPaginatorAn($event)
+          (searchAll)="getSearchAllAn($event)"
+          (routerEdit)="getRouterEditAn($event)"
+          (routerDelete)="getRouterDeleteAn($event)"
+          (routerCreate)="getRouterCreateAn($event)"
+          >
+          </app-my-table>
+<!-- botoes de  interação -->
+<div class="row ">
+  <div class="col-3 col-md-4 col-lg-4  ">
+
+      <button mat-raised-button color="primary">Alterar</button>
+      <button mat-raised-button color="primary">Visualizar</button>
+  </div>
+</div><br>
+      </div><br>
+
+        </mat-tab>
+        <!-- Fim da Aba Andamento  -->
+
+      </mat-tab-group>
+<!-- botoes de  interação -->
+<div class="row ">
+  <div class="col-3 col-md-4 col-lg-4  ">
+      <button mat-raised-button color="primary">Salvar</button>
+      <button mat-raised-button color="primary">Enviar</button>
+      <button mat-raised-button color="primary">Finalizar</button>
+      <button mat-raised-button color="primary">Imprimir</button>
+      <button mat-raised-button color="primary">Voltar</button>
+  </div>
+</div><br>
+      <!-- adiciona os elementos na pagina -->
+       </form>
+    </div> <!-- ./container-fluid -->
+
+</div>
+<app-my-footer></app-my-footer>
