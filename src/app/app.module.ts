@@ -38,7 +38,6 @@ import { NgxCaptureModule } from 'ngx-capture';
     MatDialogModule,
     Interceptor,
     RouterModule,
-    MatFormFieldModule,    
     NgxCaptureModule
   ],
   providers: [
