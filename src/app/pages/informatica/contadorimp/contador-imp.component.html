@@ -1,0 +1,187 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+       
+
+            <div class="row">
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Data</legend>
+                    <div class="row">
+                        <div class="col-6 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Data Inicial</mat-label>
+                                    <input #dateinitial matInput [matDatepicker]="pickerInitial">
+                                    <mat-datepicker-toggle matSuffix [for]="pickerInitial"></mat-datepicker-toggle>
+                                    <mat-datepicker #pickerInitial></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Data Final</mat-label>
+                                    <input #datefinal matInput [matDatepicker]="pickerFinal">
+                                    <mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+                                    <mat-datepicker #pickerFinal></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Tipo de Impressão</legend>
+                    <div class="row">
+                        <div class="col-1 col-md-4 col-lg-4">
+                            <mat-checkbox color="primary" [checked]="ckbQuality" (change)="getValueCkbQuality($event.checked)">Monocromatica</mat-checkbox>
+                        </div>
+                        <div class="col-1 col-md-5 col-lg-5">
+                            <mat-checkbox color="primary" [checked]="ckbDevolution" (change)="getValueCkbDevolution($event.checked)">
+                               Plotter</mat-checkbox>
+                        </div>
+                        <div class="col-1 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary" [checked]="ckbOccurrence" (change)="getValueCkbOccurrence($event.checked)">
+                                Colorida</mat-checkbox>
+                        </div>
+                        <div class="col-1 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary" [checked]="ckbOthers" (change)="getValueCkbOthers($event.checked)">Digitalização</mat-checkbox>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+            </div><br>
+
+
+            <div class="row">
+
+              <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Impressora</mat-label>
+                      <input #product class="text-uppercase" matInput (keyup)="getProduct()">
+
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <input #nameProduct class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Usuário Responsável</mat-label>
+                  <input #user class="text-uppercase" matInput (keyup)="getUserResponsible()" (dblclick)="openModalUser()">
+              </mat-form-field>
+          </div>
+      </div>
+
+           <div class= "col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <input #nameUser class="text-uppercase" matInput (dblclick)="openModalUser()">
+                </mat-form-field>
+            </div>
+
+
+
+              </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Unidade</mat-label>
+                            <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameComplaint class="text-uppercase" matInput >
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Setor</mat-label>
+                            <input #sector class="text-uppercase" matInput (keyup)="getSector()"(dblclick)="openModalSetor()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameSector class="text-uppercase" matInput (dblclick)="openModalSetor()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row ">
+                <div class="col-3 col-md-4 col-lg-4 ">
+                    <button mat-raised-button color="primary" (click)="listSac()">Pesquisar</button>
+                </div>
+
+            </div><br>
+
+
+
+
+       <!-- Tabela-->
+       <app-my-table
+       [displayedColumns]="displayedColumns"
+       [dataSource]="dataSource"
+       [displayHeaderColumns]="displayHeaderColumns"
+       [totalElements]="totalElements"
+       [loading]="loading"
+       [showButtons]="true"
+       [showButtonsConfirm]="false"
+       [showinputSearch]="false"
+       (getSort)=getMatSort($event)
+       (getPaginator)=getMatPaginator($event)
+       (searchAll)="getSearchAll($event)"
+       (routerEdit)="getRouterEdit($event)"
+       (routerDelete)="getRouterDelete($event)"
+       (routerCreate)="getRouterCreate($event)">
+       </app-my-table>
+
+    </div> <!-- ./container-fluid -->
+
+
+    <div class="row ">
+        <div class="col-3 col-md-4 col-lg-4  ">
+
+            <button mat-raised-button color="primary" (click)="incluir()">Novo</button>
+            <button mat-raised-button color="primary" (click)="edit()">Alterar</button>
+            <button mat-raised-button color="primary" (click)="remove()">Remover</button>
+            <button mat-raised-button color="primary" (click)="limpar()" >Limpar</button>
+            <button mat-raised-button color="primary" (click)="vizualizar()">Visualizar</button>
+            <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+        </div>
+    </div><br>
+
+</div>
+<app-my-footer></app-my-footer>
+

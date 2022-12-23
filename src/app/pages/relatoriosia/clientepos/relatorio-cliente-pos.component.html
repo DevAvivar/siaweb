@@ -1,0 +1,65 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+        <form>
+
+            <div class="row">
+
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Supervisor</mat-label>
+                            <input #codeClient class="text-uppercase" matInput  (keyup)="getClientForCode()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameClient class="text-uppercase" matInput readonly >
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+
+    <div class="row">
+
+         <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Representante</mat-label>
+                  <input #user class="text-uppercase" matInput (keyup)="getUserResponsible()" (dblclick)="openModalrepresentative()">
+              </mat-form-field>
+          </div>
+      </div>
+
+           <div class= "col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <input #nameUser class="text-uppercase" matInput (dblclick)="openModalrepresentative()">
+                </mat-form-field>
+            </div>
+
+              </div>
+        </div>
+
+
+        </form>
+
+    </div> <!-- ./container-fluid -->
+
+    <div class="row ">
+      <div class="col-3 col-md-4 col-lg-4  ">
+
+
+          <button mat-raised-button color="primary" (click)="print()">Imprimir</button>
+          <button mat-raised-button color="primary" (click)="export()" >Planilha</button>
+          <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+      </div>
+    </div><br>
+</div>
+<app-my-footer></app-my-footer>

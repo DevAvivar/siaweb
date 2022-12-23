@@ -1,0 +1,219 @@
+
+<app-my-header></app-my-header>
+<div  class="content-wrapper">
+    <app-my-toolbar [nameContent] = "nameContent"></app-my-toolbar>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-1">
+                <label for="inputEmail4">Matricula</label>
+                <input #registration type="text" class="form-control" id="inputEmail4"  (keyup)="getRegistration()">
+              </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Nome</label>
+            <input #name type="text" class="form-control" id="inputEmail4"  (keyup)="getName()">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPassword4">Cargo</label>
+            <input #function type="text" class="form-control" id="inputPassword4"  (keyup)="getFunction()">
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="inputAddress">Celular</label>
+            <input #celPhone type="text" class="form-control"  id="inputAddress" (keyup)="getCelPhone()">
+          </div>  
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="inputAddress">Telefone</label>
+                <input #phone type="text" class="form-control" id="inputAddress"  (keyup)="getPhone()">
+              </div>       
+
+              <div class="form-group col-md-9">
+                <label for="inputAddress">E-mail</label>
+                <input #email type="email" class="form-control" id="inputAddress"  (keyup)="getEmail()">
+              </div>   
+            
+        </div>
+        <div class="form-row">
+            <div class="form-group offset-4 col-md-1">
+                <br>
+                <label ></label>
+              <button #generate type="button" class="form-control btn btn-primary" (click)="generateSignature()">Gerar</button>
+            </div>  
+
+            <div class="form-group  col-md-1">
+                <br>
+                <label ></label>
+              <button #generate type="button" class="form-control btn btn-secondary" (click)="cleanFields()">Limpar</button>
+            </div>  
+        </div>
+        
+      </form>
+
+    <DIV #signature style="FONT-SIZE: 12pt; FONT-FAMILY: 'Calibri'; COLOR: #000000"> 
+        <TABLE id=tabelaMaster style="COLOR: #000000">
+            <TBODY>
+                <TR>
+                    <TD width=170>
+                        <DIV>
+                            <IMG id=fundoEsquerdo style="HEIGHT: 122px; WIDTH: 160px" src="./assets/signature-resource/logoFundo.png">
+                        </DIV>
+                    </TD>
+                    <TD width=220><BR>
+                        <LABEL id=nome>{{nameField}}</LABEL><BR/>
+                        <LABEL id=cargo class=textoComum>{{functionField}}</LABEL> 
+                        <TABLE id=tabelaContatos style="COLOR: #000000">
+                            <TBODY>
+                                <TR>
+                                    <TD>
+                                        <IMG id=imgCel class=imgContato style="HEIGHT: 15px; WIDTH: 15px" src="./assets/signature-resource/cel.png"> 
+                                    </TD>
+                                    <TD>
+                                        <A id=linkCel class="textoComum textoLink" href="#">{{celPhoneField}}</A>
+                                    </TD>
+                                </TR>
+                                <TR>
+                                    <TD>
+                                    <IMG id=imgTel class=imgContato style="HEIGHT: 16px; WIDTH: 16px" src="./assets/signature-resource/tel.png"> </TD>
+                                    <TD>
+                                        <A id=linkTel class="textoComum textoLink" href="#">{{phoneField}}</A>
+                                    </TD>
+                                </TR>
+                                <TR>
+                                    <TD>
+                                        <IMG id=imgMail class=imgContato style="HEIGHT: 18px; WIDTH: 18px" src="./assets/signature-resource/mail.png"> 
+                                    </TD>
+                                    <TD>
+                                        <A id=linkMail class="textoComum textoLink" href="#">{{emailField}}</A> 
+                                    </TD>
+                                </TR>
+                                <!--
+                                <TR>
+                                    <TD>
+                                        <IMG id=imgSkype class=imgContato style="HEIGHT: 18px; WIDTH: 18px" src="caminho\imagemSkype.png##########"> 
+                                    </TD>
+                                    <TD>
+                                        <A id=linkSkype class="textoComum textoLink" href="linkSkype##########">Nome Skype##########</A> 
+                                    </TD>
+                                </TR>
+                                -->
+                            </TBODY>
+                        </TABLE>
+                        <IMG id=imgOrgulho style="WIDTH: 54.8%" 
+                        src="./assets/signature-resource/orgulho.jpg" height=15> 
+                    </TD>
+                    <TD id=colunaBar>
+                        <IMG id="imgBar" title="propostas_assinaturas" class=imgBar style="BORDER: 0px; BACKGROUND-IMAGE: none; PADDING: 3px; DISPLAY: inline; border: 0; " alt=propostas_assinaturas src="./assets/signature-resource/bar.jpg" width=9 height=170> 
+                    </TD>
+                    <TD id=ultimaColuna width=250>
+                        <LABEL class=textoCinza><BR>
+                            Povoado Teixeiras, s/n - Zona Rural<BR>
+                            Sao Sebastiao do Oeste - MG<BR>
+                            CEP: 35.567-000<BR>
+                            <A class=textoCinza href="tel:+553732862000">+55 (37) 3286-2000</A><BR>
+                            <A class=textoCinza href="http:\\www.avivar.com.br" target=_blank>www.avivar.com.br</A><BR><BR>
+                            <A href="https://www.facebook.com/avivaralimentosdobrasil/" target=_blank>
+                            <IMG id=imgFace class=imgSocial style="HEIGHT: 18px; WIDTH: 18px" src="./assets/signature-resource/face.png"></A>&nbsp; 
+                            <A href="https://twitter.com/avivaroficial" target=_blank>
+                            <IMG id=imgTwitter class=imgSocial style="HEIGHT: 21px; WIDTH: 21px" src="./assets/signature-resource/twitter.png"></A>&nbsp; 
+                            <A href="https://www.youtube.com/avivaroficial" target=_blank>
+                            <IMG id=imgYouTube class=imgSocial style="HEIGHT: 22px; WIDTH: 22px" src="./assets/signature-resource/youtube.png"></A>&nbsp; 
+                            <A href="https://www.instagram.com/avivaroficial/" target=_blank>
+                            <IMG id=imgInstagram class=imgSocial style="HEIGHT: 19px; WIDTH: 19px" src="./assets/signature-resource/insta.png"></A>&nbsp; 
+                            <A href="https://www.linkedin.com/avivaroficial/" target=_blank>
+                            <IMG id=imgLinke class=imgSocial style="HEIGHT: 20px; WIDTH: 20px" src="./assets/signature-resource/linke.png"></A>&nbsp; 
+                            <A href="https://open.spotify.com/user/fx1fja7a1zfgh5fhyi31aglc5?si=8Zl9lyBnRAyqNpGQH-Jy8A" target=_blank>
+                            <IMG id=imgSpotify class=imgSocial style="HEIGHT: 20px; WIDTH: 20px" src="http://www.avivar.com.br/Spotify_Icon.png"></A>&nbsp;
+                            <A href="https://www.tiktok.com/@avivaroficial?lang=pt-BR" target=_blank>
+                            <IMG id=imgTikTok class=imgSocial style="HEIGHT: 20px; WIDTH: 20px" src="http://www.avivar.com.br/TikTok_Icon.png"></A>&nbsp; 
+                        </LABEL>
+                    </TD>
+                </TR>
+            </TBODY>
+        </TABLE>
+        <STYLE>
+            img#imgorgulho{
+            width: 50%;
+            }
+            img#fundoesquerdo{
+            position: relative;
+            left:10px; 
+            top:15px; 
+            width: 150px;
+            height: 126px;
+            }
+            img#logo{
+            position: fixed;
+            left:100px; 
+            top:18px; 
+            }
+            img.imgcontato{
+            position: relative;
+            width: 20px;
+            height: 20px;
+            margin: 0px;
+            }
+            img.imgsocial{
+            text-decoration: none;
+            font-style: normal;
+            width: 25px;
+            height: 25px;
+            border: 0px;
+            }
+            img.imgbar{
+            position: relative;
+            top: 10px;
+            height: 130px;
+            width: 1px;
+            }
+            .textocomum{
+            text-decoration: none;
+            font-size: 13px;
+            font-style: normal;
+            font-family: arial, helvetica, sans-serif;
+            color:black;
+            }
+            .textolink{
+            position: relative;
+            padding-bottom: 10px;
+            }
+            .textocinza{
+            text-decoration: none;
+            font-size: 13px;
+            font-style: normal;
+            font-family: arial, helvetica, sans-serif;
+            color: #c3c3c3; 
+            }
+            label#nome{
+            font-size: 15px;
+            font-style: bold;
+            font-family: arial, helvetica, sans-serif;
+            color: black;
+            font-weight: 600;
+            }
+            label#cargo{
+            font-size: 15px;
+            }
+            /*td#ultimacoluna{
+            border-left: 2px solid;
+            padding:0 0 3px 20px;
+            font-family: arial;
+            border-color:#df0209;
+            }*/
+            tr, td{
+            padding: 0px;
+            margin: 0px;
+            }
+            td#colunabar{
+            padding: 10px;
+            }
+        </STYLE>
+    </DIV>
+
+</div>
+
+<br>
+<a #downloadImg href="{{img}}" download="assinatura_email.png"></a>
+<!-- <img src="{{img}}"> -->
+
+<app-my-footer></app-my-footer>

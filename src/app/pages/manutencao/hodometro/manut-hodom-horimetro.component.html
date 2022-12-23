@@ -1,0 +1,158 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+        <div>
+
+            <div class="row">
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Data</legend>
+                    <div class="row">
+                      <div class="col-6 col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <mat-form-field appearance="fill">
+                               <input #dateinitial matInput [matDatepicker]="pickerx32">
+                                <mat-datepicker-toggle matSuffix [for]="pickerx32"></mat-datepicker-toggle>
+                                <mat-datepicker #pickerx32></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <mat-form-field appearance="fill">
+                                <input #datefinal matInput [matDatepicker]="pickerx33">
+                                <mat-datepicker-toggle matSuffix [for]="pickerx33"></mat-datepicker-toggle>
+                                <mat-datepicker #pickerx33></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Hora</legend>
+                    <div class="row">
+
+                      <div class="col-6 col-md-4 col-lg-4">
+                        <div class="form-group">
+                           <mat-form-field appearance="fill">
+                               <mat-label>Hora Inicial</mat-label>
+                               <input matInput type="time"  [value]="dateCreationTime">
+                           </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-4">
+                      <div class="form-group">
+                         <mat-form-field appearance="fill">
+                             <mat-label>Hora Final</mat-label>
+                             <input matInput type="time" [value]="closingDateTime" >
+                           </mat-form-field>
+                      </div>
+                  </div>
+                    </div>
+
+                </fieldset>
+
+            </div><br>
+
+            <div class="row"></div>
+            <div class="col-3 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Código </mat-label>
+                      <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+                  </mat-form-field>
+              </div>
+          </div>
+        </div>
+
+            <div class="row">
+
+
+                  <div class="col-3 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Equipamento </mat-label>
+                          <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+                      </mat-form-field>
+                  </div>
+              </div>
+
+              <div class="col-3 col-md-4 col-lg-4">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                          <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalMotivorec()">
+                      </mat-form-field>
+                  </div>
+              </div>
+              <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Usuário Responsável</mat-label>
+                      <input #user class="text-uppercase" matInput (keyup)="getUserResponsible()" (dblclick)="openModalUser()">
+                  </mat-form-field>
+              </div>
+          </div>
+
+               <div class= "col-3 col-md-4 col-lg-4">
+                  <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <input #nameUser class="text-uppercase" matInput (dblclick)="openModalUser()">
+                    </mat-form-field>
+                </div>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="row">
+
+             <div class="col-3 col-md-4 col-lg-4 ">
+              <button mat-raised-button color="primary" (click)="listSac()">Pesquisar</button>
+          </div>
+        </div>
+
+
+
+        <!-- Tabela-->
+        <app-my-table
+        [displayedColumns]="displayedColumns"
+        [dataSource]="dataSource"
+        [displayHeaderColumns]="displayHeaderColumns"
+        [totalElements]="totalElements"
+        [loading]="loading"
+        [showButtons]="true"
+        [showButtonsConfirm]="false"
+        [showinputSearch]="false"
+        (getSort)=getMatSort($event)
+        (getPaginator)=getMatPaginator($event)
+        (searchAll)="getSearchAll($event)"
+        (routerEdit)="getRouterEdit($event)"
+        (routerDelete)="getRouterDelete($event)"
+        (routerCreate)="getRouterCreate($event)">
+        </app-my-table>
+
+<!-- botoes de  interação -->
+<div class="row ">
+  <div class="col-3 col-md-4 col-lg-4  ">
+      <button mat-raised-button color="primary" type="submit" >Salvar</button>
+      <button mat-raised-button color="primary" (click)="send()">Enviar</button>
+      <button mat-raised-button color="primary" (click)="finalize()" >Finalizar</button>
+      <button mat-raised-button color="primary" (click)="print()">Imprimir</button>
+      <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+  </div>
+</div><br>
+
+    </div> <!-- ./container-fluid -->
+
+
+</div>
+<app-my-footer></app-my-footer>
+

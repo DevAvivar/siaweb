@@ -1,0 +1,91 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <!-- content -->
+    <div class="container-fluid">
+        <form [formGroup]="formGroup" (ngSubmit)="generateReport()" name="form" novalidate>
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill" class="content-inactive-select">
+                            <mat-label>Escolha uma Camera*</mat-label>
+                            <mat-select formControlName="camera">
+                                <mat-option value="Todos">TODAS</mat-option>
+                                <mat-option *ngFor="let cam of cameras$  | async" [value]="cam.camIp">
+                                    {{cam.camName}}
+                                </mat-option>
+                                <mat-option value="Todos">TODOS</mat-option>
+                            </mat-select>
+                            <mat-error>Campo é obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-6 col-md-8 col-lg-8">
+
+                </div>
+            </div>
+
+            <div class="row">
+             <div class="col-6 col-md-2 col-lg-2">
+                 <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Data Inicial</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dateInitial" name="dateInitial">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error>Campo é obrigatório</mat-error>
+                    </mat-form-field>
+                 </div>
+             </div>
+             <div class="col-6 col-md-2 col-lg-2">
+                 <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Hora Inicial</mat-label>
+                        <input matInput type="time" formControlName="timeInitial" name="timeInitial" #timeInitial>
+                        <mat-error>Campo é obrigatório</mat-error>
+                    </mat-form-field>
+                 </div>
+             </div>
+             <div class="col-8">
+                 
+             </div>
+            </div>
+
+            <div class="row">
+             <div class="col-6 col-md-2 col-lg-2">
+                 <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Data Final</mat-label>
+                        <input matInput [matDatepicker]="picker2" formControlName="dateFinal" name="dateFinal">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                        <mat-error>Campo é obrigatório</mat-error>
+                    </mat-form-field>
+                 </div>
+             </div>
+             <div class="col-6 col-md-2 col-lg-2">
+                 <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Hora Final</mat-label>
+                        <input matInput type="time" formControlName="timeFinal" name="timeFinal" #timeFinal>
+                        <mat-error>Campo é obrigatório</mat-error>
+                    </mat-form-field>
+                 </div>
+             </div>
+             <div class="col-8">
+
+             </div>
+            </div>
+
+            <div class="line-buttons">
+                <button mat-raised-button color="primary">Gerar</button>
+                <button type="button" mat-raised-button (click)="clear()">Limpar</button>
+            </div>
+        </form>
+
+        <div *ngIf="loading" class="spinner">
+            <mat-spinner></mat-spinner>
+        </div>
+    </div>
+</div>
+<app-my-footer></app-my-footer>

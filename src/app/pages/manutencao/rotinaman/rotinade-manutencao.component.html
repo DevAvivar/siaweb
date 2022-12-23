@@ -1,0 +1,177 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+        <div>
+          <div class="row">
+
+            <div class="col-3 col-md-2 col-lg-2">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Equipamento </mat-label>
+                      <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+                  </mat-form-field>
+              </div>
+          </div>
+
+          <div class="col-3 col-md-4 col-lg-4">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalMotivorec()">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-3 col-md-2 col-lg-2">
+          <div class="form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Parte do Equipamento</mat-label>
+                  <input #codeClient class="text-uppercase" matInput  (keyup)="getClientForCode()"(dblclick)="openModalClient()">
+              </mat-form-field>
+          </div>
+      </div>
+
+      <div class="col-3 col-md-4 col-lg-4">
+          <div class="form-group">
+              <mat-form-field appearance="fill">
+                  <input #nameClient class="text-uppercase" matInput readonly (dblclick)="openModalClient()">
+              </mat-form-field>
+          </div>
+      </div>
+
+     </div>
+
+     <div class="row">
+
+      <div class="col-3 col-md-2 col-lg-2">
+        <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Tarefa </mat-label>
+                <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+            </mat-form-field>
+        </div>
+       </div>
+
+        <div class="col-3 col-md-4 col-lg-4">
+        <div class="form-group">
+            <mat-form-field appearance="fill">
+                <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalMotivorec()">
+            </mat-form-field>
+        </div>
+        </div>
+
+        <div class="col-3 col-md-2 col-lg-2">
+          <div class="form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Motivo da Manutenção </mat-label>
+                  <input #codeClient class="text-uppercase" matInput  (keyup)="getClientForCode()"(dblclick)="openModalClient()">
+              </mat-form-field>
+          </div>
+         </div>
+
+         <div class="col-3 col-md-4 col-lg-4">
+          <div class="form-group">
+              <mat-form-field appearance="fill">
+                  <input #nameClient class="text-uppercase" matInput readonly (dblclick)="openModalClient()">
+              </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+
+          <div class="row">
+          <fieldset class="border p-2 col-6">
+            <legend class="w-auto">Frequência</legend>
+            <div class="row">
+               <div class="col-3 col-md-4 col-lg-4">
+
+                <div class="form-group">
+                  <legend class="w-auto">Hodô/Horímetro</legend>
+                    <mat-form-field appearance="fill">
+                       <input #nameSector class="text-uppercase" matInput >
+                    </mat-form-field>
+                </div>
+            </div> ou
+            <div class="col-3 col-md-4 col-lg-4">
+              <legend class="w-auto">&nbsp; Dias</legend>
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                     <input #nameSector class="text-uppercase" matInput >
+                  </mat-form-field>
+              </div>
+          </div>
+
+            </div>
+    </fieldset>
+    <fieldset class="border p-2 col-6">
+      <legend class="w-auto">Tipo de Manutenção</legend>
+      <div class="row">
+        <div class="col-3 col-md-4 col-lg-4">
+          <mat-form-field appearance="fill">
+            <!-- <mat-label>Select an option</mat-label> -->
+            <mat-select disableRipple>
+              <mat-option value="1">Selecione</mat-option>
+              <mat-option value="2">Preventiva</mat-option>
+              <mat-option value="3">Corretiva</mat-option>
+              <mat-option value="4">Corretiva Programada</mat-option>
+              <mat-option value="5">Ordem de Serviço</mat-option>
+              <mat-option value="6">Desmontagem e Montagem</mat-option>
+              <mat-option value="7">Preditiva</mat-option>
+              <mat-option value="8">Manutenção de Plantão</mat-option>
+              <mat-option value="9">Melhorias</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+          </div>
+        </div>
+          </fieldset>
+</div>
+
+              <div class="row">
+
+ <!-- botoes de  Pesquisa -->
+ <div class="row ">
+  <div class="col-3 col-md-4 col-lg-4  ">
+      <button mat-raised-button color="primary" type="submit" >Pesquisar</button>
+
+  </div>
+</div><br>
+</div>
+
+
+
+
+        <!-- Tabela-->
+        <app-my-table
+        [displayedColumns]="displayedColumns"
+        [dataSource]="dataSource"
+        [displayHeaderColumns]="displayHeaderColumns"
+        [totalElements]="totalElements"
+        [loading]="loading"
+        [showButtons]="true"
+        [showButtonsConfirm]="false"
+        [showinputSearch]="false"
+        (getSort)=getMatSort($event)
+        (getPaginator)=getMatPaginator($event)
+        (searchAll)="getSearchAll($event)"
+        (routerEdit)="getRouterEdit($event)"
+        (routerDelete)="getRouterDelete($event)"
+        (routerCreate)="getRouterCreate($event)">
+        </app-my-table>
+
+        <!-- botoes de  interação -->
+        <div class="row ">
+          <div class="col-3 col-md-4 col-lg-4  ">
+
+              <button mat-raised-button color="primary" (click)="incluir()">Novo</button>
+              <button mat-raised-button color="primary" (click)="edit()">Alterar</button>
+              <button mat-raised-button color="primary" (click)="remove()">Remover</button>
+              <button mat-raised-button color="primary" (click)="limpar()" >Limpar</button>
+              <button mat-raised-button color="primary" (click)="vizualizar()">Visualizar</button>
+              <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+          </div>
+      </div><br>
+
+
+<app-my-footer></app-my-footer>
+

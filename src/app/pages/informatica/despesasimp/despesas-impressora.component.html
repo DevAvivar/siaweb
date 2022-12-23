@@ -1,0 +1,107 @@
+
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+        <form>
+
+            <div class="row">
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Data</legend>
+                    <div class="row">
+                        <div class="col-6 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Data Inicial</mat-label>
+                                    <input #dateinitial matInput [matDatepicker]="pickerInitial">
+                                    <mat-datepicker-toggle matSuffix [for]="pickerInitial"></mat-datepicker-toggle>
+                                    <mat-datepicker #pickerInitial></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Data Final</mat-label>
+                                    <input #datefinal matInput [matDatepicker]="pickerFinal">
+                                    <mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+                                    <mat-datepicker #pickerFinal></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </fieldset>
+
+
+
+            </div><br>
+
+
+            <div class="row">
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Impressora</mat-label>
+                            <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameComplaint class="text-uppercase" matInput >
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row ">
+                <div class="col-3 col-md-4 col-lg-4 ">
+                    <button mat-raised-button color="primary" (click)="listSac()">Pesquisar</button>
+                </div>
+            </div><br>
+
+
+        </form>
+
+        <!-- Tabela-->
+        <app-my-table
+        [displayedColumns]="displayedColumns"
+        [dataSource]="dataSource"
+        [displayHeaderColumns]="displayHeaderColumns"
+        [totalElements]="totalElements"
+        [loading]="loading"
+        [showButtons]="true"
+        [showButtonsConfirm]="false"
+        [showinputSearch]="false"
+        (getSort)=getMatSort($event)
+        (getPaginator)=getMatPaginator($event)
+        (searchAll)="getSearchAll($event)"
+        (routerEdit)="getRouterEdit($event)"
+        (routerDelete)="getRouterDelete($event)"
+        (routerCreate)="getRouterCreate($event)">
+        </app-my-table>
+
+    </div> <!-- ./container-fluid -->
+<!-- botoes de  interação -->
+<div class="row ">
+    <div class="col-3 col-md-4 col-lg-4  ">
+
+        <button mat-raised-button color="primary" (click)="incluir()">Novo</button>
+        <button mat-raised-button color="primary" (click)="edit()">Alterar</button>
+        <button mat-raised-button color="primary" (click)="remove()">Remover</button>
+        <button mat-raised-button color="primary" (click)="limpar()" >Limpar</button>
+        <button mat-raised-button color="primary" (click)="visualizar()">Visualizar</button>
+        <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+    </div>
+</div><br>
+
+</div>
+<app-my-footer></app-my-footer>

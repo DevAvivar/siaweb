@@ -1,0 +1,247 @@
+
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+        <div>
+
+            <div class="row">
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Data/Hora de Solicitação</legend>
+                    <div class="row">
+                      <div class="col-6 col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <mat-form-field appearance="fill">
+                                <!-- <mat-label>Data da Solicitacão</mat-label> -->
+                                <input #dateinitial matInput [matDatepicker]="pickerx34">
+                                <mat-datepicker-toggle matSuffix [for]="pickerx34"></mat-datepicker-toggle>
+                                <mat-datepicker #pickerx34></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2 col-lg-2">
+                      <div class="form-group">
+                         <mat-form-field appearance="fill">
+                             <mat-label>Hora Inicial do Contato</mat-label>
+                             <input matInput type="time" [value]="clientContactDateTime" >
+
+                         </mat-form-field>
+                      </div>
+                  </div>
+
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Data/Hora do Agendamento</legend>
+                    <div class="row">
+                      <div class="col-6 col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <mat-form-field appearance="fill">
+                                <input #datefinal matInput [matDatepicker]="pickerx35">
+                                <mat-datepicker-toggle matSuffix [for]="pickerx35"></mat-datepicker-toggle>
+                                <mat-datepicker #pickerx35></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+
+                    <div class="col-6 col-md-2 col-lg-2">
+                      <div class="form-group">
+                         <mat-form-field appearance="fill">
+                             <mat-label>Hora Retorno para Cliente</mat-label>
+                             <input matInput type="time" [value]="clientReturnDateTime">
+
+                         </mat-form-field>
+                      </div>
+                  </div>
+                    </div>
+
+                </fieldset>
+
+            </div><br>
+
+            <fieldset class="border p-2 col-6">
+              <legend class="w-auto">Tipo de Manutenção</legend>
+              <div class="row">
+
+                <mat-form-field appearance="fill">
+                  <!-- <mat-label>Select an option</mat-label> -->
+                  <mat-select disableRipple>
+                    <mat-option value="1">Selecione</mat-option>
+                    <mat-option value="2">Preventiva</mat-option>
+                    <mat-option value="3">Corretiva</mat-option>
+                    <mat-option value="4">Corretiva Programada</mat-option>
+                    <mat-option value="5">Ordem de Serviço </mat-option>
+                    <mat-option value="6">Desmontagem e Montagem</mat-option>
+                    <mat-option value="7">Preditiva</mat-option>
+                    <mat-option value="8">Manutenção de Plantão</mat-option>
+                    <mat-option value="9">Melhorias</mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+
+              </div>
+          </fieldset>
+
+          <div class="row">
+             <fieldset class="border p-2 col-6">
+              <div class="row">
+                <div class="col-2 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Quantidade</mat-label>
+                          <input #nameClient class="text-uppercase" matInput readonly (dblclick)="openModalClient()">
+                      </mat-form-field>
+                  </div>
+              </div>
+
+
+              <div class="col-2 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>* Intervalo</mat-label>
+                        <input #nameClient class="text-uppercase" matInput readonly (dblclick)="openModalClient()">
+                    </mat-form-field>
+                </div>
+              </div>
+
+
+              <div class="col-2 col-md-2 col-lg-2">
+                <mat-form-field appearance="fill">
+                <!-- <mat-label>Select an option</mat-label> -->
+                <mat-select disableRipple>
+                  <mat-option value="1">Selecione</mat-option>
+                  <mat-option value="2">MINUTOS</mat-option>
+                  <mat-option value="3">HORAS</mat-option>
+                  <mat-option value="4">DIAS</mat-option>
+                  <mat-option value="5">SEMANAS </mat-option>
+                  <mat-option value="6">MESES</mat-option>
+                  <mat-option value="7">ANOS</mat-option>
+
+                </mat-select>
+                 </mat-form-field>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+            <div class="row">
+
+
+              <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Tarefa </mat-label>
+                        <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+                    </mat-form-field>
+                </div>
+            </div>
+
+              <div class="col-3 col-md-4 col-lg-4">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                          <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalMotivorec()">
+                      </mat-form-field>
+                  </div>
+              </div>
+
+              <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Equipamento </mat-label>
+                        <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                      <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalMotivorec()">
+                  </mat-form-field>
+              </div>
+          </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Usuário Digitador</mat-label>
+                            <input #codeClient class="text-uppercase" matInput  (keyup)="getClientForCode()"(dblclick)="openModalClient()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameClient class="text-uppercase" matInput readonly (dblclick)="openModalClient()">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Usuário Solicitante</mat-label>
+                          <input #codeClient class="text-uppercase" matInput  (keyup)="getClientForCode()"(dblclick)="openModalClient()">
+                      </mat-form-field>
+                  </div>
+              </div>
+
+              <div class="col-3 col-md-4 col-lg-4">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                          <input #nameClient class="text-uppercase" matInput readonly (dblclick)="openModalClient()">
+                      </mat-form-field>
+                  </div>
+              </div>
+              </div>
+
+<!-- Campos Textarea  Causa e Observação -->
+              <div class="row">
+
+                <fieldset class="border p-2 col-6">
+
+                  <div class="form-group">
+                   <label for="story">&nbsp;* Causa  &nbsp;</label><br>
+                    <textarea id="story" name="story" rows="10" cols="100" formControlName="note"> </textarea>
+                  </div>
+                </fieldset>
+
+                  <fieldset class="border p-2 col-6">
+
+                    <div class="form-group">
+                     <label for="story">&nbsp; Observação &nbsp;</label><br>
+                      <textarea id="story" name="story" rows="10" cols="100" formControlName="note"> </textarea>
+                    </div>
+                  </fieldset>
+                  </div>
+              <div class="row">
+
+
+
+
+
+
+
+        <!-- botoes de  interação -->
+        <div class="row ">
+          <div class="col-3 col-md-4 col-lg-4  ">
+              <button mat-raised-button color="primary">Agendar</button>
+              <button mat-raised-button color="primary">Limpar</button>
+              <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+          </div>
+        </div><br>
+
+    </div> <!-- ./container-fluid -->
+
+
+
+</div>
+<app-my-footer></app-my-footer>
+

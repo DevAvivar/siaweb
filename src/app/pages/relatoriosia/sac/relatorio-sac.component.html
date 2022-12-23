@@ -1,0 +1,328 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+        <form>
+            <div class="row">
+
+          <fieldset class="border p-2 col-6">
+          <div class="row">
+              <div class="col-6 col-md-4 col-lg-4">
+              <div class="form-group">
+                      <mat-form-field appearance="fill">
+                      <mat-label>Data do Contato</mat-label>
+                      <input #dateinitial matInput [matDatepicker]="pickerx">
+                      <mat-datepicker-toggle matSuffix [for]="pickerx"></mat-datepicker-toggle>
+                      <mat-datepicker #pickerx></mat-datepicker>
+
+                  </mat-form-field>
+              </div>
+          </div>
+         <div class="col-1 col-md-1 col-lg-1">
+            <div class="form-group">
+              <mat-label>até</mat-label>
+            </div>
+         </div>
+
+          <div class="col-6 col-md-3 col-lg-3">
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Data Inicial</mat-label>
+                    <input #dateinitial matInput [matDatepicker]="pickerx1">
+                    <mat-datepicker-toggle matSuffix [for]="pickerx1"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerx1></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        </div >
+      </fieldset>
+
+      <fieldset class="border p-2 col-6">
+        <div class="row">
+
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Data Retorno</mat-label>
+                        <input  matInput [matDatepicker]="pickerx2">
+                        <mat-datepicker-toggle matSuffix [for]="pickerx2"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerx2></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-1 col-md-1 col-lg-1">
+              <div class="form-group">
+                <mat-label>até</mat-label>
+              </div>
+           </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Data Final</mat-label>
+                        <input matInput [matDatepicker]="pickerx3">
+                        <mat-datepicker-toggle matSuffix [for]="pickerx3"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerx3></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-2 col-md-3 col-lg-3">
+                <mat-checkbox color="primary"  [checked]="noReturn" (change)="getValueNoreturn($event.checked)">Todas as Unidades</mat-checkbox>
+            </div>
+        </div>
+</fieldset>
+</div><br>
+
+           <div class="row">
+
+
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Status</legend>
+                    <div class="row">
+
+                        <div class="col-2 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary"  [checked]="statusPending" (change)="getValueStatusPending($event.checked)">
+                                Pendente</mat-checkbox>
+                        </div>
+                        <div class="col-2 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary" [checked]="statusProgress" (change)="getValueStatusProgress($event.checked)">
+                                Em
+                                Andamento</mat-checkbox>
+                        </div>
+                        <div class="col-2 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary" [checked]="statusFinished" (change)="getValueStatusFinished($event.checked)">
+                                Finalizado</mat-checkbox>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Classificação</legend>
+                    <div class="row">
+                        <div class="col-1 col-md-4 col-lg-4">
+                            <mat-checkbox color="primary" [checked]="ckbQuality" (change)="getValueCkbQuality($event.checked)">Qualidade
+                                e Outros</mat-checkbox>
+                        </div>
+                        <div class="col-1 col-md-5 col-lg-5">
+                            <mat-checkbox color="primary" [checked]="ckbDevolution" (change)="getValueCkbDevolution($event.checked)">
+                                Devoluções e Refaturamento</mat-checkbox>
+                        </div>
+                        <div class="col-1 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary" [checked]="ckbOccurrence" (change)="getValueCkbOccurrence($event.checked)">
+                                Ocorrência</mat-checkbox>
+                        </div>
+                        <div class="col-1 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary" [checked]="ckbOthers" (change)="getValueCkbOthers($event.checked)">Terceiros
+                            </mat-checkbox>
+                        </div>
+                        <div class="col-1 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary" [checked]="ckbFfo" (change)="getValueCkbFfo($event.checked)">FFO
+                            </mat-checkbox>
+                        </div>
+                        <div class="col-1 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary" [checked]="ckbInformative" (change)="getValueCkbInformative($event.checked)">
+                                Informativo</mat-checkbox>
+                        </div>
+                        <div class="col-1 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary" [checked]="ckbExport" (change)="getValueCkbExport($event.checked)">Exportação
+                            </mat-checkbox>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </div><br>
+
+
+
+
+            <div class="row">
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Cliente ERP</mat-label>
+                            <input #erpClient class="text-uppercase" matInput (keyup)="getClientForERP()" (dblclick)="openModalClient()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Cliente</mat-label>
+                            <input #codeClient class="text-uppercase" matInput  (keyup)="getClientForCode()"(dblclick)="openModalClient()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameClient class="text-uppercase" matInput readonly (dblclick)="openModalClient()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-2 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Protocolo</mat-label>
+                            <input #protocol class="text-uppercase" matInput >
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-2 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                        <mat-label>NFe</mat-label>
+                        <input #product class="text-uppercase" matInput (keyup)="getProduct()">
+
+                      </mat-form-field>
+                  </div>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Produto</mat-label>
+                      <input #product class="text-uppercase" matInput (keyup)="getProduct()"(dblclick)="openModalProduct()">
+
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <input #nameProduct class="text-uppercase" matInput (dblclick)="openModalProduct()">
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Responsável pelo Atendimento</mat-label>
+                  <input #user class="text-uppercase" matInput (keyup)="getUserResponsible()" (dblclick)="openModalUser()">
+              </mat-form-field>
+          </div>
+      </div>
+
+           <div class= "col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <input #nameUser class="text-uppercase" matInput (dblclick)="openModalUser()">
+                </mat-form-field>
+            </div>
+
+              </div>
+        </div>
+
+
+            <div class="row">
+                <div class="col-2 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Motivo da Reclamação</mat-label>
+                            <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()"(dblclick)="openModalMotivorec()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-2 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalMotivorec()">
+                        </mat-form-field>
+                    </div>
+                </div>
+<br><br><br>
+                <div class="col-2 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Setor</mat-label>
+                            <input #sector class="text-uppercase" matInput (keyup)="getSector()"(dblclick)="openModalSetor()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameSector class="text-uppercase" matInput (dblclick)="openModalSetor()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </form>
+<div class="row">
+  <fieldset class="border p-2 col-6">
+    <legend class="w-auto">Tipo de Relatório</legend>
+    <div class="row">
+
+        <div class="col-2 col-md-3 col-lg-3">
+            <mat-checkbox color="primary"  [checked]="statusPending" (change)="getValueStatusPending($event.checked)">
+                Listagem</mat-checkbox>
+        </div>
+        <div class="col-2 col-md-3 col-lg-3">
+            <mat-checkbox color="primary" [checked]="statusProgress" (change)="getValueStatusProgress($event.checked)">
+               Gráfico</mat-checkbox>
+        </div>
+        <div class="col-2 col-md-3 col-lg-3">
+            <mat-checkbox color="primary" [checked]="statusFinished" (change)="getValueStatusFinished($event.checked)">
+                Planilha</mat-checkbox>
+        </div>
+        <mat-form-field appearance="fill">
+          <!-- <mat-label>Select an option</mat-label> -->
+          <mat-select disableRipple>
+            <mat-option value="1">Selecione</mat-option>
+            <mat-option value="2">Canal de Atendimento</mat-option>
+            <mat-option value="3">Cidade</mat-option>
+            <mat-option value="4">Cliente</mat-option>
+            <mat-option value="5">CROSS/CD</mat-option>
+            <mat-option value="6">Despesa</mat-option>
+            <mat-option value="7">Despesa por Cliente</mat-option>
+            <mat-option value="8">Devolução e Refaturamento</mat-option>
+            <mat-option value="9">Estado</mat-option>
+            <mat-option value="10">Gerente</mat-option>
+            <mat-option value="11">Lote</mat-option>
+            <mat-option value="12">Motivo da Reclamação</mat-option>
+            <mat-option value="13">Motorista</mat-option>
+            <mat-option value="14">Produto</mat-option>
+            <mat-option value="15">Produto por Turno</mat-option>
+            <mat-option value="16">Produto por Compra/Reclamada </mat-option>
+            <mat-option value="17">Representante</mat-option>
+            <mat-option value="18">Receita por Cliente</mat-option>
+            <mat-option value="19">Setor Responsável</mat-option>
+            <mat-option value="20">Supervisor</mat-option>
+            <mat-option value="21">Tipo de Contato</mat-option>
+            <mat-option value="22">Transportadora</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+
+    </div>
+
+</fieldset>
+</div>
+
+    </div> <!-- ./container-fluid -->
+
+    <div class="row ">
+      <div class="col-3 col-md-4 col-lg-4  ">
+
+          <button mat-raised-button color="primary" (click)="limpar()" >Limpar</button>
+          <button mat-raised-button color="primary" (click)="print()">Imprimir</button>
+          <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+      </div>
+    </div><br>
+</div>
+<app-my-footer></app-my-footer>

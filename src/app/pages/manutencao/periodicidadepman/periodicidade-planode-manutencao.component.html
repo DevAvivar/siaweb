@@ -1,0 +1,233 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+        <div>
+
+            <div class="row">
+
+            </div><br>
+
+            <fieldset class="border p-2 col-12">
+              <legend class="w-auto">Dias da Semana</legend>
+              <div class="row">
+
+                  <div class="col-2 col-md-2 col-lg-2">
+                      <mat-checkbox color="primary"  [checked]="statusPending" (change)="getValueStatusPending($event.checked)">
+                          Domingo</mat-checkbox>
+                  </div><br>
+                  <div class="col-2 col-md-2 col-lg-2">
+                      <mat-checkbox color="primary"  (change)="getValueStatusProgress($event.checked)">
+                          Segunda </mat-checkbox>
+                  </div>
+                  <div class="col-2 col-md-2 col-lg-2">
+                    <mat-checkbox color="primary"  (change)="getValueStatusFinished($event.checked)">
+                       Terça </mat-checkbox>
+                </div>
+                  <div class="col-2 col-md-2 col-lg-2">
+                      <mat-checkbox color="primary" (change)="getValueStatusFinished($event.checked)">
+                          Quarta</mat-checkbox>
+                  </div>
+
+                  <div class="col-2 col-md-2 col-lg-2">
+                    <mat-checkbox color="primary"  (change)="getValueStatusFinished($event.checked)">
+                        Quinta</mat-checkbox>
+                </div>
+                <div class="col-2 col-md-2 col-lg-2">
+                  <mat-checkbox color="primary"  (change)="getValueStatusFinished($event.checked)">
+                      Sexta</mat-checkbox>
+              </div>
+              <div class="col-2 col-md-2 col-lg-2">
+                <mat-checkbox color="primary"  (change)="getValueStatusFinished($event.checked)">
+                    Sábado</mat-checkbox>
+            </div>
+              </div>
+
+          </fieldset>
+
+
+
+            <div class="row">
+
+
+                <div class="col-3 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Plano de Manutenção </mat-label>
+                          <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+                      </mat-form-field>
+                  </div>
+              </div>
+
+              <div class="col-3 col-md-4 col-lg-4">
+                  <div class="form-group">
+                      <mat-form-field appearance="fill">
+                          <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalMotivorec()">
+                      </mat-form-field>
+                  </div>
+              </div>
+
+              <div class="col-3 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Equipamento </mat-label>
+                        <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                  <mat-form-field appearance="fill">
+                      <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalMotivorec()">
+                  </mat-form-field>
+              </div>
+          </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Setor</mat-label>
+                            <input #codeClient class="text-uppercase" matInput  (keyup)="getClientForCode()"(dblclick)="openModalClient()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameClient class="text-uppercase" matInput readonly (dblclick)="openModalClient()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+              </div>
+
+
+
+
+
+          <div class="row">
+            <fieldset class="border p-2 col-6">
+            <div class="row">
+            <div class="col-3 col-md-3 col-lg-3">
+                <mat-form-field appearance="fill">
+                  <mat-label>Dia</mat-label>
+                  <mat-select disableRipple>
+                    <mat-option value="1">Selecione</mat-option>
+                    <mat-option value="2">1</mat-option>
+                    <mat-option value="3">2</mat-option>
+                    <mat-option value="4">3</mat-option>
+                    <mat-option value="5">4</mat-option>
+                    <mat-option value="6">5</mat-option>
+                    <mat-option value="7">6 </mat-option>
+                    <mat-option value="8">7</mat-option>
+                    <mat-option value="9">8</mat-option>
+                    <mat-option value="10">9</mat-option>
+                    <mat-option value="11">10</mat-option>
+                    <mat-option value="12">11</mat-option>
+                    <mat-option value="13">12</mat-option>
+                    <mat-option value="14">13</mat-option>
+                    <mat-option value="15">14</mat-option>
+                    <mat-option value="16">15</mat-option>
+                    <mat-option value="17">16</mat-option>
+                    <mat-option value="18">17</mat-option>
+                    <mat-option value="19">18</mat-option>
+                    <mat-option value="20">19</mat-option>
+                    <mat-option value="21">20</mat-option>
+                    <mat-option value="22">21</mat-option>
+                    <mat-option value="23">22</mat-option>
+                    <mat-option value="24">23</mat-option>
+                    <mat-option value="25">24</mat-option>
+                    <mat-option value="26">25</mat-option>
+                    <mat-option value="27">26</mat-option>
+                    <mat-option value="28">27</mat-option>
+                    <mat-option value="29">28</mat-option>
+                    <mat-option value="30">29</mat-option>
+                    <mat-option value="31">30</mat-option>
+                    <mat-option value="32">31</mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="col-3 col-md-3 col-lg-3">
+            <mat-form-field appearance="fill">
+              <mat-label>Mês</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Todos</mat-option>
+                <mat-option value="2">1</mat-option>
+                <mat-option value="3">2</mat-option>
+                <mat-option value="4">3</mat-option>
+                <mat-option value="5">4</mat-option>
+                <mat-option value="6">5</mat-option>
+                <mat-option value="7">6 </mat-option>
+                <mat-option value="8">7</mat-option>
+                <mat-option value="9">8</mat-option>
+                <mat-option value="10">9</mat-option>
+                <mat-option value="11">10</mat-option>
+                <mat-option value="12">11</mat-option>
+                <mat-option value="13">12</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        </fieldset>
+        <div class="col-2 col-md-2 col-lg-2">
+          <mat-checkbox color="primary"  [checked]="noReturn" (change)="getValueNoreturn($event.checked)">Inativo -F6 </mat-checkbox>
+      </div><br>
+
+        </div>
+
+
+
+
+                <div class="col-3 col-md-4 col-lg-4 ">
+                  <button mat-raised-button color="primary" (click)="listSac()">Pesquisar</button>
+              </div>
+          </div>
+
+
+
+        <!-- Tabela-->
+        <app-my-table
+        [displayedColumns]="displayedColumns"
+        [dataSource]="dataSource"
+        [displayHeaderColumns]="displayHeaderColumns"
+        [totalElements]="totalElements"
+        [loading]="loading"
+        [showButtons]="true"
+        [showButtonsConfirm]="false"
+        [showinputSearch]="false"
+        (getSort)=getMatSort($event)
+        (getPaginator)=getMatPaginator($event)
+        (searchAll)="getSearchAll($event)"
+        (routerEdit)="getRouterEdit($event)"
+        (routerDelete)="getRouterDelete($event)"
+        (routerCreate)="getRouterCreate($event)">
+        </app-my-table>
+
+        <!-- botoes de  interação -->
+        <div class="row ">
+          <div class="col-3 col-md-4 col-lg-4  ">
+              <button mat-raised-button color="primary" type="submit" >Salvar</button>
+              <button mat-raised-button color="primary" (click)="send()">Enviar</button>
+              <button mat-raised-button color="primary" (click)="finalize()" >Finalizar</button>
+              <button mat-raised-button color="primary" (click)="print()">Imprimir</button>
+              <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+          </div>
+        </div><br>
+
+    </div> <!-- ./container-fluid -->
+
+
+
+</div>
+<app-my-footer></app-my-footer>
+
+

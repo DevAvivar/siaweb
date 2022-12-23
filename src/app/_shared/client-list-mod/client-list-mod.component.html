@@ -1,0 +1,20 @@
+ <p>Consulta Cliente</p>
+
+<app-my-table
+[displayedColumns]="displayedColumns"
+[dataSource]="dataSource"
+[displayHeaderColumns]="displayHeaderColumns"
+[totalElements] = "totalElements"
+[loading]="loading"
+[showButtons]="true"
+(getSort)=getMatSort($event)
+(getPaginator) = getMatPaginator($event)
+(searchAll)="getSearchAll($event)"
+(routerEdit)="getRouterEdit($event)"
+(routerDelete)="getRouterDelete($event)"
+(routerCreate)="getRouterCreate($event)"
+>
+</app-my-table>
+
+
+

@@ -1,0 +1,42 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+<app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+
+
+        <!-- Tabela-->
+        <app-my-table
+        [displayedColumns]="displayedColumns"
+        [dataSource]="dataSource"
+        [displayHeaderColumns]="displayHeaderColumns"
+        [totalElements]="totalElements"
+        [loading]="loading"
+        [showButtons]="true"
+        [showButtonsConfirm]="false"
+        [showinputSearch]="false"
+        (getSort)=getMatSort($event)
+        (getPaginator)=getMatPaginator($event)
+        (searchAll)="getSearchAll($event)"
+        (routerEdit)="getRouterEdit($event)"
+        (routerDelete)="getRouterDelete($event)"
+        (routerCreate)="getRouterCreate($event)">
+        </app-my-table>
+
+
+<!-- botoes de  interação -->
+<div class="row ">
+      <div class="col-3 col-md-4 col-lg-4  ">
+
+          <button mat-raised-button color="primary" (click)="incluir()">Novo</button>
+          <button mat-raised-button color="primary" (click)="edit()">Alterar</button>
+          <button mat-raised-button color="primary" (click)="remove()">Remover</button>
+          <button mat-raised-button color="primary" (click)="limpar()" >Limpar</button>
+          <button mat-raised-button color="primary" (click)="visualizar()">Visualizar</button>
+          <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+      </div>
+</div><br>
+
+
+</div> <!-- ./container-fluid -->
+<app-my-footer></app-my-footer>
+
+

@@ -1,0 +1,25 @@
+
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+<app-my-toolbar [nameContent] = "nameContent"></app-my-toolbar>
+<!-- Tabela-->
+<app-my-table 
+[displayedColumns]="displayedColumns" 
+[dataSource]="dataSource" 
+[displayHeaderColumns]="displayHeaderColumns" 
+[totalElements] = "totalElements"
+[loading]="loading"
+[showButtons]="false"
+[showButtonsConfirm]="true"
+[showinputSearch]="false"
+(getSort)=getMatSort($event)
+(getPaginator) = getMatPaginator($event)
+(searchAll)="getSearchAll($event)"
+(routerEdit)="getRouterEdit($event)"
+(routerDelete)="getRouterDelete($event)"
+(routerCreate)="getRouterCreate($event)"
+(routerConfirm)="getRouterConfirm($event)"
+>
+</app-my-table>
+</div>
+<app-my-footer></app-my-footer>

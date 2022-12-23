@@ -1,0 +1,178 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+        <form>
+            <div class="row">
+
+          <fieldset class="border p-2 col-6">
+          <div class="row">
+              <div class="col-6 col-md-4 col-lg-4">
+              <div class="form-group">
+                      <mat-form-field appearance="fill">
+                      <mat-label>Data de Atendimento</mat-label>
+                      <input #dateinitial matInput [matDatepicker]="pickerx12">
+                      <mat-datepicker-toggle matSuffix [for]="pickerx12"></mat-datepicker-toggle>
+                      <mat-datepicker #pickerx12></mat-datepicker>
+
+                  </mat-form-field>
+              </div>
+          </div>
+         <div class="col-1 col-md-1 col-lg-1">
+            <div class="form-group">
+              <mat-label>até</mat-label>
+            </div>
+         </div>
+
+          <div class="col-6 col-md-4 col-lg-4">
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+
+                    <input #dateinitial matInput [matDatepicker]="pickerx13">
+                    <mat-datepicker-toggle matSuffix [for]="pickerx13"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerx13></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        </div >
+      </fieldset>
+
+      <fieldset class="border p-2 col-6">
+        <div class="row">
+
+            <div class="col-6 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Data de Finalização</mat-label>
+                        <input  matInput [matDatepicker]="pickerx14">
+                        <mat-datepicker-toggle matSuffix [for]="pickerx14"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerx14></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-1 col-md-1 col-lg-1">
+              <div class="form-group">
+                <mat-label>até</mat-label>
+              </div>
+           </div>
+            <div class="col-6 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+
+                        <input matInput [matDatepicker]="pickerx15">
+                        <mat-datepicker-toggle matSuffix [for]="pickerx15"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerx15></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </div>
+</fieldset>
+</div><br>
+
+
+
+            <div class="row">
+
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Cliente</mat-label>
+                            <input #codeClient class="text-uppercase" matInput  (keyup)="getClientForCode()"(dblclick)="openModalClient()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameClient class="text-uppercase" matInput readonly (dblclick)="openModalClient()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+
+    <div class="row">
+
+         <div class="col-3 col-md-2 col-lg-2">
+            <div class="form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Representante</mat-label>
+                  <input #user class="text-uppercase" matInput (keyup)="getUserResponsible()" (dblclick)="openModalrepresentative()">
+              </mat-form-field>
+          </div>
+      </div>
+
+           <div class= "col-3 col-md-4 col-lg-4">
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                  <input #user class="text-uppercase" matInput (dblclick)="openModalrepresentative()">
+                </mat-form-field>
+            </div>
+
+              </div>
+        </div>
+
+
+            <div class="row">
+                <div class="col-2 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Motivo da Inativação</mat-label>
+                            <input #complaint class="text-uppercase" matInput (keyup)="getReasonComplaint()"(dblclick)="openModalMotivoinat()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-2 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input #nameComplaint class="text-uppercase" matInput (dblclick)="openModalMotivoinat()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+        </form>
+<div class="row">
+  <fieldset class="border p-2 col-6">
+    <legend class="w-auto">Tipo de Relatório</legend>
+    <div class="row">
+
+            <div class="col-2 col-md-3 col-lg-3">
+            <mat-checkbox color="primary" [checked]="statusProgress" (change)="getValueStatusProgress($event.checked)">
+               Gráfico</mat-checkbox>
+        </div>
+        <div class="col-2 col-md-3 col-lg-3">
+            <mat-checkbox color="primary" [checked]="statusFinished" (change)="getValueStatusFinished($event.checked)">
+                Relatório</mat-checkbox>
+        </div>
+
+
+    </div>
+
+</fieldset>
+
+</div>
+
+    </div> <!-- ./container-fluid -->
+    <br>
+    <div class="row ">
+      <div class="col-3 col-md-4 col-lg-4  ">
+
+
+          <button mat-raised-button color="primary" (click)="print()">Imprimir</button>
+          <button mat-raised-button color="primary" (click)="limpar()" >Limpar</button>
+          <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+      </div>
+    </div><br>
+</div>
+<app-my-footer></app-my-footer>
+

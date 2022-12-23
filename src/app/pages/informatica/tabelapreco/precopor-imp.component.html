@@ -1,0 +1,91 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <fieldset class="border p-2 col-6">
+
+            <div class="col-6 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Data de Criação</mat-label>
+                            <input  matInput [matDatepicker]="pickerx18">
+                            <mat-datepicker-toggle matSuffix [for]="pickerx18"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerx18></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-1 col-md-1 col-lg-1">
+                <div class="form-group">
+                    <mat-label>até</mat-label>
+                </div>
+            </div>
+                <div class="col-6 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <input matInput [matDatepicker]="pickerx19">
+                            <mat-datepicker-toggle matSuffix [for]="pickerx19"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerx19></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="border p-2 col-6">
+
+                    <div class="col-3 col-md-3 col-lg-3  ">
+                            <mat-form-field appearance="fill">
+                                <!-- <mat-label>Select an option</mat-label> -->
+                                <mat-select disableRipple>
+                                <mat-option value="1">Todos</mat-option>
+                                <mat-option value="2">Monocromatica</mat-option>
+                                <mat-option value="3">Colorida</mat-option>
+                                <mat-option value="4">Plotter</mat-option>
+
+                            </mat-select>
+                            </mat-form-field>
+                            <!-- <div class="col-3 col-md-3 col-lg-3  "> -->
+                            <button mat-raised-button color="primary" (click)="pesquisar()">Pesquisar</button>
+                            <!-- </div> -->
+                    </div>
+
+            </fieldset>
+
+
+        </div>
+
+
+        <!-- Tabela-->
+        <app-my-table
+        [displayedColumns]="displayedColumns"
+        [dataSource]="dataSource"
+        [displayHeaderColumns]="displayHeaderColumns"
+        [totalElements]="totalElements"
+        [loading]="loading"
+        [showButtons]="true"
+        [showButtonsConfirm]="false"
+        [showinputSearch]="false"
+        (getSort)=getMatSort($event)
+        (getPaginator)=getMatPaginator($event)
+        (searchAll)="getSearchAll($event)"
+        (routerEdit)="getRouterEdit($event)"
+        (routerDelete)="getRouterDelete($event)"
+        (routerCreate)="getRouterCreate($event)">
+        </app-my-table>
+
+        <div class="row ">
+            <div class="col-3 col-md-4 col-lg-4  ">
+
+                <button mat-raised-button color="primary" (click)="incluir()">Novo</button>
+                <button mat-raised-button color="primary" (click)="edit()">Alterar</button>
+                <button mat-raised-button color="primary" (click)="remove()">Remover</button>
+                <button mat-raised-button color="primary" (click)="limpar()" >Limpar</button>
+                <button mat-raised-button color="primary" (click)="vizualizar()">Visualizar</button>
+                <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+            </div>
+        </div><br>
+
+    </div>
+</div>
+  <app-my-footer></app-my-footer>

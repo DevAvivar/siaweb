@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '../src/assets/dist/css/adminlte.css';
+@import '../src/assets/plugins/fontawesome-free/css/all.css';
+
+
+
+html, body {
+
+    height: 100%;
+  position:fixed;
+  width:100%;
+  height:100%;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-form-field{
+    width: 100%;
+}
+
+.line-buttons button,
+.line-buttons a {
+    margin: 8px 8px 20px 0px;
+}
+
+
+@media print
+{
+    form{
+        display: none;
+    }
+
+}
+
+.primary{
+    background-color: #6d6d6d;
+}
+
+
+//Sobrepoe a cor primary do angular material para o botoes
+.mat-button.mat-primary {
+    color: #6d6d6d;
+ }
+ //Sobrepoe a cor primary do angular material para o botoes
+ .mat-raised-button.mat-primary, .mat-flat-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary{
+    background-color: #6d6d6d;
+    color: white;
+ }
+
+ //Sobrepoe a cor primary do angular material para o botoes
+.mat-checkbox.mat-primary {
+    color: #6d6d6d;
+ }
+

@@ -1,0 +1,158 @@
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+    <app-my-toolbar [nameContent]="nameContent"></app-my-toolbar>
+    <div class="container-fluid">
+        <!-- adiciona os elementos na pagina -->
+        <form>
+            <div class="row">
+
+          <fieldset class="border p-2 col-6">
+          <div class="row">
+              <div class="col-6 col-md-4 col-lg-4">
+              <div class="form-group">
+                      <mat-form-field appearance="fill">
+                      <mat-label>Data inicio  Contrato</mat-label>
+                      <input #dateinitial matInput [matDatepicker]="pickerx">
+                      <mat-datepicker-toggle matSuffix [for]="pickerx"></mat-datepicker-toggle>
+                      <mat-datepicker #pickerx></mat-datepicker>
+
+                  </mat-form-field>
+              </div>
+          </div>
+         <div class="col-1 col-md-1 col-lg-1">
+            <div class="form-group">
+              <mat-label>até</mat-label>
+            </div>
+         </div>
+
+          <div class="col-6 col-md-4 col-lg-4">
+              <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Data Inicial</mat-label>
+                    <input #dateinitial matInput [matDatepicker]="pickerx1">
+                    <mat-datepicker-toggle matSuffix [for]="pickerx1"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerx1></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        </div >
+      </fieldset>
+
+      <fieldset class="border p-2 col-6">
+        <div class="row">
+
+            <div class="col-6 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Data Fim do Contrato</mat-label>
+                        <input  matInput [matDatepicker]="pickerx2">
+                        <mat-datepicker-toggle matSuffix [for]="pickerx2"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerx2></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-1 col-md-1 col-lg-1">
+              <div class="form-group">
+                <mat-label>até</mat-label>
+              </div>
+           </div>
+            <div class="col-6 col-md-4 col-lg-4">
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Data Final</mat-label>
+                        <input matInput [matDatepicker]="pickerx3">
+                        <mat-datepicker-toggle matSuffix [for]="pickerx3"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerx3></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+</fieldset>
+</div><br>
+
+           <div class="row">
+
+                <fieldset class="border p-2 col-6">
+                    <legend class="w-auto">Status</legend>
+                    <div class="row">
+
+                        <div class="col-2 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary"   (change)="getValueStatusPending($event.checked)">
+                                Cancelado</mat-checkbox>
+                        </div>
+                        <div class="col-2 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary"  (change)="getValueStatusProgress($event.checked)">
+                                Vigente</mat-checkbox>
+                        </div>
+                        <div class="col-2 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary"  (change)="getValueStatusProgress($event.checked)">
+                                Vencido</mat-checkbox>
+                        </div>
+                        <div class="col-2 col-md-3 col-lg-3">
+                            <mat-checkbox color="primary"  (change)="getValueStatusFinished($event.checked)">
+                                Futuro</mat-checkbox>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </div><br>
+
+            <div class="row">
+                <div class="col-3 col-md-2 col-lg-2">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Impressora</mat-label>
+                            <input #erpClient class="text-uppercase" matInput (keyup)="getClientForERP()" >
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-3 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                          <mat-label></mat-label>
+                            <input #codeClient class="text-uppercase" matInput  (keyup)="getClientForCode()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+
+    </div> <!-- ./container-fluid -->
+
+     <!-- Tabela-->
+     <app-my-table
+     [displayedColumns]="displayedColumns"
+     [dataSource]="dataSource"
+     [displayHeaderColumns]="displayHeaderColumns"
+     [totalElements]="totalElements"
+     [loading]="loading"
+     [showButtons]="true"
+     [showButtonsConfirm]="false"
+     [showinputSearch]="false"
+     (getSort)=getMatSort($event)
+     (getPaginator)=getMatPaginator($event)
+     (searchAll)="getSearchAll($event)"
+     (routerEdit)="getRouterEdit($event)"
+     (routerDelete)="getRouterDelete($event)"
+     (routerCreate)="getRouterCreate($event)">
+     </app-my-table>
+
+     <div class="row ">
+         <div class="col-3 col-md-4 col-lg-4  ">
+
+             <button mat-raised-button color="primary" (click)="incluir()">Novo</button>
+             <button mat-raised-button color="primary" (click)="edit()">Alterar</button>
+             <button mat-raised-button color="primary" (click)="remove()">Remover</button>
+             <button mat-raised-button color="primary" (click)="limpar()" >Limpar</button>
+             <button mat-raised-button color="primary" (click)="vizualizar()">Visualizar</button>
+             <button mat-raised-button color="primary" (click)="back()">Voltar</button>
+         </div>
+     </div><br>
+
+</div>
+<app-my-footer></app-my-footer>

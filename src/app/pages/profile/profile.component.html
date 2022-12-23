@@ -1,0 +1,100 @@
+
+<app-my-header></app-my-header>
+<div class="content-wrapper">
+<app-my-toolbar [nameContent] = "nameContent"></app-my-toolbar>
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+
+          <!-- Profile Image -->
+          <div class="card card-primary card-outline">
+            <div class="card-body box-profile">
+              <div class="text-center">
+                <img class="profile-user-img img-fluid img-circle"
+                     src="../../../assets/dist/img/user-icon.png"
+                     alt="User profile picture">
+              </div>
+
+              <h3 class="profile-username text-center">{{user.name}}</h3>
+
+              <p class="text-muted text-center">{{user.login}}</p>
+
+              <button (click)="logoutSystem()" class="btn btn-primary btn-block"> <em class="fas fa-sign-out-alt"></em> <strong class="offset-1">Sair</strong> </button>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header p-2">
+              <ul class="nav nav-pills">
+                <!-- <li class="nav-item"><a class="nav-link " href="#activity" data-toggle="tab">Activity</a></li>
+                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a></li> -->
+                <li class="nav-item offset-5"><strong>Alterar Senha</strong></li>
+              </ul>
+            </div><!-- /.card-header -->
+            <div class="card-body">
+              <div class="tab-content">
+               <!-- form para requisição da alteração de senha -->
+                <div class=" active tab-pane">
+                  <form class="form-horizontal" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && updatePassword()">
+                    <div class="form-group row">
+                      <div class="col-sm-10">
+                        <mat-form-field>
+                          <input matInput placeholder="Código" formControlName="userCode" readonly type="text" >
+                      </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-10">
+                        <mat-form-field>
+                          <input matInput placeholder="Senha Atual" formControlName="passwordOld" required type="password">
+                          <mat-error>Campo é obrigatório</mat-error>
+                      </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-10">
+                        <mat-form-field>
+                          <input matInput placeholder="Nova Senha" formControlName="passwordNew" required type="password">
+                          <mat-error>Campo é obrigatório</mat-error>
+                      </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-10">
+                        <mat-form-field>
+                          <input matInput placeholder="Confirmação da Senha" required formControlName="passwordConfirm" type="password">
+                          <mat-error>Campo é obrigatório</mat-error>
+                      </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="offset-sm-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Alterar Senha</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.tab-pane -->
+              </div>
+              <!-- /.tab-content -->
+            </div><!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<app-my-footer></app-my-footer>
