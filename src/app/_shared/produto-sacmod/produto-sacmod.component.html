@@ -1,0 +1,122 @@
+ <!-- Visualização de produto Sac- inicio -->
+ <div class="row">
+
+  <div class="col-6 col-md-2 col-lg-2">
+      <div class="form-group">
+          <mat-form-field appearance="fill">
+          <mat-label>Código</mat-label>
+              <input #code matInput class="text-uppercase" >
+          </mat-form-field>
+      </div>
+  </div>
+  <br>
+  <div class="col-3 col-md-3 col-lg-3">
+    <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Protocolo</mat-label>
+            <input #protocol class="text-uppercase" matInput >
+        </mat-form-field>
+    </div>
+</div>
+<div class="col-6 col-md-2 col-lg-2">
+  <div class="form-group">
+      <mat-form-field appearance="fill">
+      <mat-label>Nf-e</mat-label>
+          <input #code matInput class="text-uppercase" >
+      </mat-form-field>
+  </div>
+</div>
+<br>
+<div class="col-6 col-md-2 col-lg-2">
+  <div class="form-group">
+      <mat-form-field appearance="fill">
+      <mat-label>Romaneio</mat-label>
+          <input #code matInput class="text-uppercase" >
+      </mat-form-field>
+  </div>
+</div>
+<br>
+<div class="col-6 col-md-2 col-lg-2">
+  <div class="form-group">
+      <mat-form-field appearance="fill">
+      <mat-label>Lote</mat-label>
+          <input #code matInput class="text-uppercase" >
+      </mat-form-field>
+  </div>
+</div>
+<br>
+<div class="col-6 col-md-2 col-lg-2">
+  <div class="form-group">
+      <mat-form-field appearance="fill">
+      <mat-label>Preço kg</mat-label>
+          <input #code matInput class="text-uppercase" >
+      </mat-form-field>
+  </div>
+</div>
+<br>
+<div class="col-6 col-md-2 col-lg-2">
+  <div class="form-group">
+      <mat-form-field appearance="fill">
+      <mat-label>Quantidade Comprada</mat-label>
+          <input #code matInput class="text-uppercase" >
+      </mat-form-field>
+  </div>
+</div>
+<br>
+<div class="col-6 col-md-2 col-lg-2">
+  <div class="form-group">
+      <mat-form-field appearance="fill">
+      <mat-label>Quantidade Reclamada</mat-label>
+          <input #code matInput class="text-uppercase" >
+      </mat-form-field>
+  </div>
+</div>
+<br>
+</div>
+
+<br>
+ <div class="row ">
+ <div class="col-3 col-md-2 col-lg-2">
+  <div class="form-group">
+      <mat-form-field appearance="fill">
+          <mat-label>Data Faturamento</mat-label>
+          <input #dateinitial matInput [matDatepicker]="pickerSeven">
+          <mat-datepicker-toggle matSuffix [for]="pickerSeven"></mat-datepicker-toggle>
+          <mat-datepicker #pickerSeven></mat-datepicker>
+      </mat-form-field>
+  </div>
+</div>
+<br>
+<div class="col-3 col-md-2 col-lg-2">
+  <div class="form-group">
+      <mat-form-field appearance="fill">
+          <mat-label>Data Fabricação</mat-label>
+          <input #dateinitial matInput [matDatepicker]="pickerOito">
+          <mat-datepicker-toggle matSuffix [for]="pickerOito"></mat-datepicker-toggle>
+          <mat-datepicker #pickerOito></mat-datepicker>
+      </mat-form-field>
+  </div>
+</div>
+<br>
+ <div class="col-3 col-md-2 col-lg-2">
+  <div class="form-group">
+      <mat-form-field appearance="fill">
+          <mat-label>Data Validade</mat-label>
+          <input #dateinitial matInput [matDatepicker]="pickerNine">
+          <mat-datepicker-toggle matSuffix [for]="pickerNine"></mat-datepicker-toggle>
+          <mat-datepicker #pickerNine></mat-datepicker>
+      </mat-form-field>
+  </div>
+</div>
+</div>
+<br>
+<div class="row ">
+  <div class="col-1 col-md-4 col-lg-4  ">
+      <button mat-raised-button color="primary">Salvar</button>
+
+      <button mat-raised-button color="primary">Limpar</button>
+
+      <button mat-raised-button color="primary"(click)="close()">Voltar</button>
+  </div>
+</div><br>
+<!-- Fim- visualização de Produto Sac -->
