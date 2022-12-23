@@ -33,7 +33,7 @@ export class PermissionADMINGuardService implements CanActivateChild{
   {
     let user: UserSia = JSON.parse( localStorage.getItem(this.localStorageKey)! );
     //SE O NIVEL DE PERMISSÃO FOR MENOR QUE ADMINISTRADOR
-    this.userRole = user.roles;
+    // this.userRole = user.roles;
     console.log("NÍVEL DE ACESSO:   "+this.userRole);
     if( this.userRole !== this.levelADMIN)
     {
