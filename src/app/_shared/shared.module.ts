@@ -1,7 +1,6 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Input, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyTableComponent } from './myTable/my-table.component';
-import { MyCameraComponent } from './myCamera/my-camera.component';
 import { MySelectComponent } from './mySelect/my-select.component';
 import { MyDialogComponent } from './myDialog/my-dialog.component';
 import { MyCodeNameComponent } from './myCodeName/my-code-name.component';
@@ -27,19 +26,26 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { DialogReadFailureComponent } from './dialogReadFailure/dialog-read-failure.component';
-import { DialogCameraShiftSelectComponent } from './dialogCameraShiftSelect/dialog-camera-shift-select.component';
 import { DialogElementsExampleDialogComponent } from './dialogElementsExampleDialog/dialog-elements-example-dialog.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { ProdutoSacmodComponent } from './produto-sacmod/produto-sacmod.component';
+import { ProdListModComponent } from './prod-list-mod/prod-list-mod.component';
+import { ClientListModComponent } from './client-list-mod/client-list-mod.component';
+import { UserSiaListModComponent } from './user-sia-list-mod/user-sia-list-mod.component';
+import { MotivoListModComponent } from './motivo-list-mod/motivo-list-mod.component';
+import { SetorListModComponent } from './setor-list-mod/setor-list-mod.component';
+import { MidiaSacModComponent } from './midia-sacmod/midia-sac-mod.component';
+
 
 
 
 @NgModule({
   declarations: [
     MyTableComponent,
-    MyCameraComponent,
     MySelectComponent,
     MyDialogComponent,
     MyCodeNameComponent,
@@ -50,9 +56,18 @@ import { MatNativeDateModule } from '@angular/material/core';
     MyToolbarComponent,
     DialogConformationComponent,
     DialogReadFailureComponent,
-    DialogCameraShiftSelectComponent,
     DialogElementsExampleDialogComponent,
-    
+    ProdutoSacmodComponent,
+
+
+    ProdListModComponent,
+      ClientListModComponent,
+      UserSiaListModComponent,
+      MotivoListModComponent,
+      SetorListModComponent,
+      MidiaSacModComponent,
+
+
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -70,7 +85,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDialogModule,
     MatButtonModule,
     RouterModule,
-    MatFormFieldModule,
     MatInputModule,
     MatInputModule,
     MatFormFieldModule,
@@ -83,12 +97,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    LayoutModule
-    
+    LayoutModule,
+    MatTooltipModule
+
+
   ],
   exports: [
     MyTableComponent,
-    MyCameraComponent,
     MySelectComponent,
     MyDialogComponent,
     MyCodeNameComponent,
@@ -98,9 +113,14 @@ import { MatNativeDateModule } from '@angular/material/core';
     MyButtonComponent,
     MyToolbarComponent,
     DialogReadFailureComponent,
-    DialogCameraShiftSelectComponent,
     DialogElementsExampleDialogComponent,
-    
+    ProdutoSacmodComponent,
+    ProdListModComponent,
+    ClientListModComponent,
+    UserSiaListModComponent,
+    MotivoListModComponent,
+    SetorListModComponent,
+
   ]
 })
 export class SharedModule { }
