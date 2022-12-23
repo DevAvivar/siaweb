@@ -8,7 +8,7 @@
             <a class="nav-link" data-widget="pushmenu"  role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item d-none d-sm-inline-block" routerLinkActive="active">
-            <a routerLink ="/assinatura/email" class="nav-link">Pagina inicial</a>
+            <a routerLink ="/principal" class="nav-link">Pagina inicial</a>
           </li>
           <!-- <li class="nav-item d-none d-sm-inline-block">
             <a routerLink="/#" class="nav-link">Contact</a>
@@ -21,22 +21,23 @@
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a routerLink="/principal" class="brand-link">
-          <span class="brand-text font-weight-light offset-4">SIA</span>
+          <span class="brand-text font-weight-light offset-4"><img src="./assets/dist/img/logoSiaMenu.png" width="50" height="50"></span>
         </a>
         <!-- Sidebar -->
         <div class="sidebar">
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-              <img src="../../../assets/dist/img/user-icon.png" class="img-circle elevation-2" alt="User Image">
+              <img src="./assets/dist/img/userProfile.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
               <a routerLink="/usuario/perfil" class="d-block">{{userLogged.name}}</a>
+              <!-- <a>{{unitLogged.name}}</a> -->
             </div>
           </div>
     
           <!-- SidebarSearch Form -->
-          <div class="form-inline">
+          <!-- <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
               <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
@@ -45,124 +46,151 @@
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
     
           <!-- Sidebar Menu -->
           <nav class="mt-2" >
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
 
               <!-- Menu item Principal -->
-              <li class="nav-item" routerLinkActive="active">
+              <!-- <li class="nav-item" routerLinkActive="active">
                 <a routerLink="/assinatura/email" class="nav-link">
                   <i class="fas fa-envelope"></i>
                   <p>
                     Assinatura de E-mail
                   </p>
                 </a>
-              </li>
-
- <!-- Menu item Auditoria -->
- <!-- <li class="nav-item">
-  <a  class="nav-link">
-    <i class="fas fa-camera"></i>
-    <p>
-      Auditoria
-      <i class="right fas fa-angle-left"></i>
-    </p>
-  </a>
-  <ul class="nav nav-treeview">
-    <li class="nav-item" routerLinkActive="active">
-      <a routerLink="/auditoria" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Listagem</p>
-      </a>
-    </li>
-    <li class="nav-item" routerLinkActive="active">
-      <a routerLink="/auditoria/cadastro" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Cadastro</p>
-      </a>
-    </li>
- 
-  </ul>
-</li> -->
-
-
-
-             <!-- Menu item Cameras -->
-              <!-- <li class="nav-item">
-                <a  class="nav-link">
-                  <i class="fas fa-camera"></i>
-                  <p>
-                    Câmera
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item" routerLinkActive="active">
-                    <a routerLink="/camera" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Listagem</p>
-                    </a>
-                  </li>
-                  <li class="nav-item" routerLinkActive="active">
-                    <a routerLink="/camera/cadastro" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Cadastro</p>
-                    </a>
-                  </li>
-               
-                </ul>
               </li> -->
-              <!-- Menu item Usuario -->
+
+
+    <!-- Menu item Cadastro -->
+    <!-- <li class="nav-item">
+      <a  class="nav-link">
+        <img src="./assets/dist/img/menu/register.png" width="40" height="40">
+        <p>
+          Cadastro
+          
+          <i class="fas fa-angle-left right"></i>
+        </p>
+      </a> -->
+      <!-- <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a routerLink="#" class="nav-link">
+            
+            <p>Listagem</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="#" class="nav-link">
+            
+            <p>Cadastro</p>
+          </a>
+        </li>
+      </ul> -->
+    <!-- </li> -->
+
+
+              <!-- Menu item Relacionamento -->
               <li class="nav-item">
                 <a  class="nav-link">
-                  <i class="nav-icon fas fa-user"></i>
+                  <img src="./assets/dist/img/menu/relationship.png" width="40" height="40">
                   <p>
-                    Usuário
+                    Relacionamento
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a routerLink="/usuario" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Listagem</p>
+                    <a routerLink="#" class="nav-link">
+                      <p>Agendamento de Visita ao Cliente</p>
                     </a>
                   </li>
+                  <hr/>
                   <li class="nav-item">
-                    <a routerLink="/usuario/cadastro" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Cadastro</p>
+                    <a routerLink="#" class="nav-link">
+                      <p>Pedidos</p>
+                    </a>
+                  </li>
+                  <hr/>
+                  <li class="nav-item">
+                    <a routerLink="/sac" class="nav-link">
+                      <p>SAC</p>
+                    </a>
+                  </li>
+                  <hr/>
+                  <li class="nav-item">
+                    <a routerLink="#" class="nav-link">
+                      <p>Solicitação de Atualização de Cliente</p>
+                    </a>
+                  </li>
+                  <hr/>
+                  <li class="nav-item">
+                    <a routerLink="#" class="nav-link">
+                      <p>Solicitação de Inativação Cliente</p>
                     </a>
                   </li>
                 </ul>
               </li>
 
-              <!-- menu item Emails -->
+              <!-- menu item Informatica -->
               <!-- <li class="nav-item">
-                <a routerLink="/#" class="nav-link">
-                  <i class="fas fa-envelope"></i>
+                <a routerLink="#" class="nav-link">
+                  <img src="./assets/dist/img/menu/computing.png" width="40" height="40">
                   <p>
-                    Email
-                    <i class="right fas fa-angle-left"></i>
+                    Informatica
+                    <i class="fas fa-angle-left right"></i>
                   </p>
-                </a>
-                <ul class="nav nav-treeview">
+                </a> -->
+                <!-- <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a routerLink="/email" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Listagem</p>
+                    <a routerLink="#" class="nav-link">
+                      <p>Aluguel de Impressora </p>
                     </a>
                   </li>
+                  <hr/>
                   <li class="nav-item">
-                    <a routerLink="/email/cadastro" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Cadastro</p>
+                    <a routerLink="#" class="nav-link">
+                      <p>Contador de Impressora</p>
                     </a>
                   </li>
-                </ul>
-              </li> -->
+                  <hr/>
+                  <li class="nav-item">
+                    <a routerLink="#" class="nav-link">
+                      <p>Contrato Emprestimo Equipamento</p>
+                    </a>
+                  </li>
+                  <hr/>
+                  <li class="nav-item">
+                    <a routerLink="#" class="nav-link">
+                      <p>Equipamento Parque Informatica</p>
+                    </a>
+                  </li>
+                  <hr/>
+                  <li class="nav-item">
+                    <a routerLink="#" class="nav-link">
+                      <p>Despesas Impressora</p>
+                    </a>
+                  </li>
+                  <hr/>
+                  <li class="nav-item">
+                    <a routerLink="#" class="nav-link">
+                      <p>Emprestimo Equipamento Informatica</p>
+                    </a>
+                  </li>
+                  <hr/>
+                  <li class="nav-item">
+                    <a routerLink="#" class="nav-link">
+                      <p>Importação Contador Impressora</p>
+                    </a>
+                  </li>
+                  <hr/>
+                  <li class="nav-item">
+                    <a routerLink="#" class="nav-link">
+                      <p>Tabela de Preço Impressão</p>
+                    </a>
+                  </li>
+                </ul> -->
+              <!-- </li> -->
 
               <!-- menu item Barras -->
               <!-- <li class="nav-item">
@@ -183,35 +211,15 @@
                 </ul>
               </li> -->
 
-                   <!-- menu item Relatorio -->
-                   <!-- <li class="nav-item">
-                    <a routerLink="/#" class="nav-link">
-                      <i class="fas fa-chart-line"></i>
-                      <p>
-                        Relatório
-                        <i class="right fas fa-angle-left"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a routerLink="/relatorio/listagem/grupo" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Barras por Câmera</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a routerLink="/relatorio/quantidade/camera" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Quantidade por Câmera</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li> -->
+                   
             </ul>
           </nav>
           <!-- /.sidebar-menu -->
         </div>
         <!-- /.sidebar -->
+        <div class="footer-sidebar">
+          <img src="./assets/dist/img/socialMedia.png" >
+        </div>
       </aside>
     
       <!-- Control Sidebar -->

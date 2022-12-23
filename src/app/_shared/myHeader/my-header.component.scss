@@ -1,0 +1,29 @@
+
+//coloca uma linha na horizontal
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid #faf7f7ee;
+  }
+
+
+  //mantem um rodapé dentro do sidebar
+  .footer-sidebar {
+    width: 100%;
+    height: 53px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+}
+
+//define o conteudo de uma imagem dentro do footer-sidebar
+.footer-sidebar img {
+    width: 180px;
+    height: 30px;
+    position: absolute;
+    bottom: 15%;
+    right: 15%
+    // object-fit: cover; /* classe pra deixa a imagem com a proporção correta e não ficar achatada */
+}
