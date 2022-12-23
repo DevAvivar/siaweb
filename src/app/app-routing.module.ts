@@ -1,8 +1,9 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardUnitService } from './guards/auth-guard-unit.service';
 import { AuthGuardService } from './guards/auth-guard.service';
-import { PermissionADMINGuardService } from './guards/permission-adminguard.service';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'principal', pathMatch: 'full' },
@@ -28,11 +29,185 @@ const routes: Routes = [
     // canActivateChild: [PermissionADMINGuardService]
    },
    {
-    path: 'sac/cadastro',
+    path: 'sac/cadastro',//13075
     loadChildren: () => import("./pages/sac/sac-atendimento/sac-atendimento.module").then((m) => m.SacAtendimentoModule),
     canActivate: [AuthGuardService, AuthGuardUnitService],
     // canActivateChild: [PermissionADMINGuardService]
    },
+
+      {
+    path: 'sac/alterar/:id',
+    loadChildren: () => import("./pages/sac/sac-atendimento/sac-atendimento.module").then((m) => m.SacAtendimentoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'relatorio/sac',
+    loadChildren: () => import("./pages/relatoriosia/sac/relatorio-sac.module").then((m) => m.RelatorioSacModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'relatorio/produtosia',
+    loadChildren: () => import("./pages/relatoriosia/produtosia/relatorio-prod-rec.module").then((m) => m.RelatorioProdRecModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'relatorio/produtom',
+    loadChildren: () => import("./pages/relatoriosia/produtom/relatorio-produto-mot.module").then((m) => m.RelatorioProdutoMotModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'relatorio/motivorec',
+    loadChildren: () => import("./pages/relatoriosia/motivorec/relatorio-motivo-rec.module").then((m) => m.RelatorioMotivoRecModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'relatorio/clienteinat',
+    loadChildren: () => import("./pages/relatoriosia/clienteinat/relatorio-cliente-inat.module").then((m) => m.RelatorioClienteInatModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'relatorio/clienterea',
+    loadChildren: () => import("./pages/relatoriosia/clienterea/relatorio-cliente-rea.module").then((m) => m.RelatorioClienteReaModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'relatorio/clientepos',
+    loadChildren: () => import("./pages/relatoriosia/clientepos/relatorio-cliente-pos.module").then((m) => m.RelatorioClientePosModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'informatica/tabelapreco',
+    loadChildren: () => import("./pages/informatica/tabelapreco/precopor-imp.module").then((m) => m.PrecoporImpModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'informatica/contadorimp',
+    loadChildren: () => import("./pages/informatica/contadorimp/contador-imp.module").then((m) => m.ContadorImpModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'informatica/despesasimp',
+    loadChildren: () => import("./pages/informatica/despesasimp/despesas-impressora.module").then((m) => m.DespesasImpressoraModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'informatica/aluguelimp',
+    loadChildren: () => import("./pages/informatica/aluguelimp/aluguel-impressora.module").then((m) => m.AluguelImpressoraModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'informatica/contratoemprest',
+    loadChildren: () => import("./pages/informatica/contratoemprest/contrato-emprestimo.module").then((m) => m.ContratoEmprestimoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'informatica/emprestimoequip',
+    loadChildren: () => import("./pages/informatica/emprestimoequip/emprestimo-equipamento.module").then((m) => m.EmprestimoEquipamentoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'informatica/parqueinfo',
+    loadChildren: () => import("./pages/informatica/parqueinfo/parque-informatica.module").then((m) => m.ParqueInformaticaModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+
+   {
+    path: 'informatica/importconta',
+    loadChildren: () => import("./pages/informatica/importa/import-conta-impressora.module").then((m) => m.ImportContaImpressoraModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'manutencao/emprestimo',
+    loadChildren: () => import("./pages/manutencao/emprestimo/emprestimo-ferramentas.module").then((m) => m.EmprestimoFerramentasModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'manutencao/hodometro',
+    loadChildren: () => import("./pages/manutencao/hodometro/manut-hodom-horimetro.module").then((m) => m.ManutHodomHorimetroModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'manutencao/ordemserv',
+    loadChildren: () => import("./pages/manutencao/ordemserv/ordemde-servico.module").then((m) => m.OrdemdeServicoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'manutencao/solicitacao',
+    loadChildren: () => import("./pages/manutencao/solicitacao/solicitacao-servico.module").then((m) => m.SolicitacaoServicoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'manutencao/agendamento',
+    loadChildren: () => import("./pages/manutencao/agendamentos/agendamento-ordemde-servicos.module").then((m) => m.AgendamentoOrdemdeServicosModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'manutencao/rotinaman',
+    loadChildren: () => import("./pages/manutencao/rotinaman/rotinade-manutencao.module").then((m) => m.RotinadeManutencaoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'manutencao/planoman',
+    loadChildren: () => import("./pages/manutencao/planoman/planode-manutencao.module").then((m) => m.PlanodeManutencaoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'manutencao/periodicidadepman',
+    loadChildren: () => import("./pages/manutencao/periodicidadepman/periodicidade-planode-manutencao.module").then((m) => m.PeriodicidadePlanodeManutencaoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+   {
+    path: 'manutencao/gerarospman',
+    loadChildren: () => import("./pages/manutencao/gerarospman/gerar-os-planode-manutencao.module").then((m) => m.GerarOsPlanodeManutencaoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+   {
+    path: 'cadastro/manutencao',
+    loadChildren: () => import("./pages/cadastro/manutencao/cadastro-mecanico.module").then((m) => m.CadastroMecanicoModule),
+    canActivate: [AuthGuardService],
+    // canActivateChild: [PermissionADMINGuardService]
+   },
+
+
+
+
   //  {
   //   path: 'camera/cadastro',
   //   loadChildren: () => import("./pages/camera/camera-register/camera-register.module").then((m) => m.CameraRegisterModule),
