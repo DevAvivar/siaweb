@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { interval, Observable } from 'rxjs';
-import { Unit } from 'src/app/pages/unit/Unit.model';
-import { UserSiaListComponent } from 'src/app/pages/userSia/user-sia-list/user-sia-list.component';
+import {  Observable } from 'rxjs';
 import { UserSiaService } from 'src/app/pages/userSia/user-sia.service';
 import { UserSia } from 'src/app/pages/userSia/UserSia.model';
 
@@ -12,7 +10,7 @@ import { UserSia } from 'src/app/pages/userSia/UserSia.model';
   styleUrls: ['./my-header.component.scss']
 })
 export class MyHeaderComponent implements OnInit {
-  
+
   loop$!: Observable<any>;
   userSia!: UserSia;
   userLogged!: UserSia;
@@ -34,6 +32,6 @@ export class MyHeaderComponent implements OnInit {
     // this.codeUser = this.userLogged.code;
   }
 
-  
- 
+
+
 }

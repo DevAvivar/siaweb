@@ -1,22 +1,20 @@
 
-   
+
       <!-- Navbar -->
       <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu"  role="button"><i class="fas fa-bars"></i></a>
-          </li>
-          <li class="nav-item d-none d-sm-inline-block" routerLinkActive="active">
+          <ul class="nav-item">
+            <a class="nav-link" data-widget="pushmenu"  role="button"><em class="fas fa-bars"></em></a>
+          </ul>
+          <ul class="nav-item d-none d-sm-inline-block" routerLinkActive="active">
             <a routerLink ="/principal" class="nav-link">Pagina inicial</a>
-          </li>
-          <!-- <li class="nav-item d-none d-sm-inline-block">
-            <a routerLink="/#" class="nav-link">Contact</a>
-          </li> -->
+          </ul>
+
         </ul>
       </nav>
       <!-- /.navbar -->
-    
+
       <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
@@ -35,7 +33,7 @@
               <!-- <a>{{unitLogged.name}}</a> -->
             </div>
           </div>
-    
+
           <!-- SidebarSearch Form -->
           <!-- <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
@@ -47,172 +45,284 @@
               </div>
             </div>
           </div> -->
-    
+
           <!-- Sidebar Menu -->
           <nav class="mt-2" >
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
 
               <!-- Menu item Principal -->
-              <!-- <li class="nav-item" routerLinkActive="active">
+              <!-- <ul class="nav-item" routerLinkActive="active">
                 <a routerLink="/assinatura/email" class="nav-link">
                   <i class="fas fa-envelope"></i>
                   <p>
                     Assinatura de E-mail
                   </p>
                 </a>
-              </li> -->
+              </ul> -->
 
-
-    <!-- Menu item Cadastro -->
-    <!-- <li class="nav-item">
-      <a  class="nav-link">
-        <img src="./assets/dist/img/menu/register.png" width="40" height="40">
-        <p>
-          Cadastro
-          
-          <i class="fas fa-angle-left right"></i>
-        </p>
-      </a> -->
-      <!-- <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a routerLink="#" class="nav-link">
-            
-            <p>Listagem</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="#" class="nav-link">
-            
-            <p>Cadastro</p>
-          </a>
-        </li>
-      </ul> -->
-    <!-- </li> -->
-
+ <!-- Menu item Cadastro -->
+ <ul class="nav-item">
+  <a  class="nav-link">
+    <img src="./assets/dist/img/menu/register.png" width="40" height="40">
+    <p>
+      Cadastro
+      <em class="fas fa-angle-left right"></em>
+    </p>
+  </a>
+  <ul class="nav nav-treeview">
+    <ul class="nav-item">
+      <a routerLink="/cadastro/manutencao" class="nav-link">
+        <p>Manutenção</p>
+      </a>
+    </ul>
+    <hr/>
+   <!-- <ul class="nav-item">
+      <a routerLink="#" class="nav-link">
+        <p>Pedidos</p>
+      </a>
+    </ul>
+    <hr/>
+    <ul class="nav-item">
+      <a routerLink="/sac" class="nav-link">
+        <p>SAC</p>
+      </a>
+    </ul>
+    <hr/>
+    <ul class="nav-item">
+      <a routerLink="#" class="nav-link">
+        <p>Solicitação de Atualização de Cliente</p>
+      </a>
+    </ul>
+    <hr/>
+    <ul class="nav-item">
+      <a routerLink="#" class="nav-link">
+        <p>Solicitação de Inativação Cliente</p>
+      </a>
+    </ul> -->
+  </ul>
+</ul>
 
               <!-- Menu item Relacionamento -->
-              <li class="nav-item">
+              <ul class="nav-item">
                 <a  class="nav-link">
                   <img src="./assets/dist/img/menu/relationship.png" width="40" height="40">
                   <p>
                     Relacionamento
-                    <i class="fas fa-angle-left right"></i>
+                    <em class="fas fa-angle-left right"></em>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item">
+                  <ul class="nav-item">
                     <a routerLink="#" class="nav-link">
                       <p>Agendamento de Visita ao Cliente</p>
                     </a>
-                  </li>
+                  </ul>
                   <hr/>
-                  <li class="nav-item">
+                 <ul class="nav-item">
                     <a routerLink="#" class="nav-link">
                       <p>Pedidos</p>
                     </a>
-                  </li>
+                  </ul>
                   <hr/>
-                  <li class="nav-item">
+                  <ul class="nav-item">
                     <a routerLink="/sac" class="nav-link">
                       <p>SAC</p>
                     </a>
-                  </li>
+                  </ul>
                   <hr/>
-                  <li class="nav-item">
+                  <ul class="nav-item">
                     <a routerLink="#" class="nav-link">
                       <p>Solicitação de Atualização de Cliente</p>
                     </a>
-                  </li>
+                  </ul>
                   <hr/>
-                  <li class="nav-item">
+                  <ul class="nav-item">
                     <a routerLink="#" class="nav-link">
                       <p>Solicitação de Inativação Cliente</p>
                     </a>
-                  </li>
+                  </ul>
                 </ul>
-              </li>
+              </ul>
 
-              <!-- menu item Informatica -->
-              <!-- <li class="nav-item">
-                <a routerLink="#" class="nav-link">
+              <!-- Menu item Informatica -->
+              <ul class="nav-item">
+                <a  class="nav-link">
                   <img src="./assets/dist/img/menu/computing.png" width="40" height="40">
                   <p>
-                    Informatica
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a> -->
-                <!-- <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a routerLink="#" class="nav-link">
-                      <p>Aluguel de Impressora </p>
-                    </a>
-                  </li>
-                  <hr/>
-                  <li class="nav-item">
-                    <a routerLink="#" class="nav-link">
-                      <p>Contador de Impressora</p>
-                    </a>
-                  </li>
-                  <hr/>
-                  <li class="nav-item">
-                    <a routerLink="#" class="nav-link">
-                      <p>Contrato Emprestimo Equipamento</p>
-                    </a>
-                  </li>
-                  <hr/>
-                  <li class="nav-item">
-                    <a routerLink="#" class="nav-link">
-                      <p>Equipamento Parque Informatica</p>
-                    </a>
-                  </li>
-                  <hr/>
-                  <li class="nav-item">
-                    <a routerLink="#" class="nav-link">
-                      <p>Despesas Impressora</p>
-                    </a>
-                  </li>
-                  <hr/>
-                  <li class="nav-item">
-                    <a routerLink="#" class="nav-link">
-                      <p>Emprestimo Equipamento Informatica</p>
-                    </a>
-                  </li>
-                  <hr/>
-                  <li class="nav-item">
-                    <a routerLink="#" class="nav-link">
-                      <p>Importação Contador Impressora</p>
-                    </a>
-                  </li>
-                  <hr/>
-                  <li class="nav-item">
-                    <a routerLink="#" class="nav-link">
-                      <p>Tabela de Preço Impressão</p>
-                    </a>
-                  </li>
-                </ul> -->
-              <!-- </li> -->
-
-              <!-- menu item Barras -->
-              <!-- <li class="nav-item">
-                <a  class="nav-link">
-                  <i class="fas fa-chart-bar"></i>
-                  <p>
-                    Barras
-                    <i class="right fas fa-angle-left"></i>
+                    Informática
+                    <em class="fas fa-angle-left right"></em>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a routerLink="/barras" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Listagem</p>
+                  <ul class="nav-item">
+                    <a routerLink="/informatica/aluguelimp" class="nav-link">
+                      <p>Aluguel de Impressoras</p>
                     </a>
-                  </li>
-                </ul>
-              </li> -->
+                  </ul>
+                  <hr/>
+                 <ul class="nav-item">
+                    <a routerLink="/informatica/contadorimp" class="nav-link">
+                      <p>Contador de Impressora</p>
+                    </a>
+                  </ul>
+                  <hr/>
+                  <ul class="nav-item">
+                    <a routerLink="/informatica/contratoemprest" class="nav-link">
+                      <p>Contrato de Emprestimo de Equipamentos</p>
+                    </a>
+                  </ul>
+                  <hr/>
+                  <ul class="nav-item">
+                    <a routerLink="/informatica/parqueinfo" class="nav-link">
+                      <p>Equipamentos do Parque de Informática</p>
+                    </a>
+                  </ul>
+                  <hr/>
+                  <ul class="nav-item">
+                    <a routerLink="/informatica/despesasimp" class="nav-link">
+                      <p>Despesas das Impressoras</p>
+                    </a>
+                  </ul>
+                  <hr/>
+                  <ul class="nav-item">
+                    <a routerLink="/informatica/emprestimoequip" class="nav-link">
+                      <p>Emprestimo de Equipamentos de Informática</p>
+                    </a>
+                  </ul>
+                  <ul class="nav-item">
+                    <a routerLink="/informatica/tabelapreco" class="nav-link">
+                      <p>Tabela de Preços por Impressão</p>
+                    </a>
+                  </ul>
+                  <hr/>
+                  <ul class="nav-item">
+                    <a routerLink="/informatica/importconta" class="nav-link">
+                      <p>Importação Contador de Impressora</p>
+                    </a>
+                  </ul>
+                  <hr/>
 
-                   
+
+                </ul>
+              </ul>
+
+          <!-- Menu item Manutenção -->
+          <ul class="nav-item">
+            <a  class="nav-link">
+              <img src="./assets/dist/img/menu/maintenance.png" width="40" height="40">
+              <p>
+                Manutenção
+                <em class="fas fa-angle-left right"></em>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <ul class="nav-item">
+                <a routerLink="/manutencao/agendamento" class="nav-link">
+                  <p>Agendamento de Ordem de Serviço</p>
+                </a>
+              </ul>
+              <hr/>
+            <ul class="nav-item">
+                <a routerLink="/manutencao/emprestimo" class="nav-link">
+                  <p>Empréstimo de Ferramentas</p>
+                </a>
+              </ul>
+              <hr/>
+              <ul class="nav-item">
+                <a routerLink="/manutencao/hodometro" class="nav-link">
+                  <p>Hodômetro/Horímetro</p>
+                </a>
+              </ul>
+              <hr/>
+              <ul class="nav-item">
+                <a routerLink="/manutencao/ordemserv" class="nav-link">
+                  <p>Ordem de Serviço</p>
+                </a>
+              </ul>
+              <hr/>
+              <ul class="nav-item">
+                <a routerLink="/manutencao/rotinaman" class="nav-link">
+                  <p>Rotina de Manutenção</p>
+                </a>
+              </ul>
+              <ul class="nav-item">
+                <a routerLink="/manutencao/solicitacao" class="nav-link">
+                  <p>Solicitação de Serviço</p>
+                </a>
+              </ul>
+              <ul class="nav-item">
+                <a routerLink="/manutencao/planoman" class="nav-link">
+                  <p>Plano de Manutenção</p>
+                </a>
+              </ul>
+
+              <ul class="nav-item">
+                <a routerLink="/manutencao/periodicidadepman" class="nav-link">
+                  <p>Periodicidade do Plano de Manutenção</p>
+                </a>
+              </ul>
+              <ul class="nav-item">
+                <a routerLink="/manutencao/gerarospman" class="nav-link">
+                  <p>Gerar O.S. Plano de Manutenção</p>
+                </a>
+              </ul>
             </ul>
+          </ul>
+          <!-- Menu item Relatorios -->
+          <ul class="nav-item">
+            <a  class="nav-link">
+              <img src="../assets/dist/img/menu/report.png" width="40" height="40">
+              <p> Relatórios<em class="fas fa-angle-left right"></em></p>
+            </a>
+              <ul class="nav nav-treeview">
+              <ul class="nav-item">
+                <a routerLink="/relatorio/sac" class="nav-link">
+                  <p> Atendimento (SAC)</p>
+                </a>
+              </ul>
+
+              <ul class="nav-item">
+                <a routerLink="/relatorio/produtosia" class="nav-link">
+                  <p>Produto Reclamado</p>
+                </a>
+              </ul>
+
+              <ul class="nav-item">
+                <a routerLink="/relatorio/motivorec" class="nav-link">
+                  <p>Motivo Reclamado Cliente</p>
+                </a>
+              </ul>
+
+              <ul class="nav-item">
+                <a routerLink="/relatorio/produtom" class="nav-link">
+                  <p>Produto por Motivo</p>
+                </a>
+              </ul>
+
+              <ul class="nav-item">
+                <a routerLink="/relatorio/clientepos" class="nav-link">
+                  <p>Clientes Possiveis Pós-Venda</p>
+                </a>
+              </ul>
+
+              <ul class="nav-item">
+                <a routerLink="/relatorio/clienterea" class="nav-link">
+                  <p>Clientes Reativados Pós-Venda</p>
+                </a>
+              </ul>
+
+              <ul class="nav-item">
+                <a routerLink="/relatorio/clienteinat" class="nav-link">
+                  <p>Inativação Cliente</p>
+                </a>
+              </ul>
+            </ul>
+          </ul>
+
+            </ul>
+
+
+
           </nav>
           <!-- /.sidebar-menu -->
         </div>
@@ -221,13 +331,13 @@
           <img src="./assets/dist/img/socialMedia.png" >
         </div>
       </aside>
-    
+
       <!-- Control Sidebar -->
       <!-- <aside class="control-sidebar control-sidebar-dark"> -->
         <!-- Control sidebar content goes here -->
       <!-- </aside> -->
       <!-- /.control-sidebar -->
-    
-      
 
-    
+
+
+
